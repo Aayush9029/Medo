@@ -13,6 +13,12 @@
 		B20CC83627E66437007A96E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20CC83527E66437007A96E3 /* Preview Assets.xcassets */; };
 		B20CC83827E66437007A96E3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC83727E66437007A96E3 /* Persistence.swift */; };
 		B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20CC83927E66437007A96E3 /* Medo.xcdatamodeld */; };
+		B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC84327E66489007A96E3 /* MainHostingVC.swift */; };
+		B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC84B27E66503007A96E3 /* EventMonitor.swift */; };
+		B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC84C27E66503007A96E3 /* StatusBarController.swift */; };
+		B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85027E666B2007A96E3 /* TaskViewModel.swift */; };
+		B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85327E66859007A96E3 /* TaskEnums.swift */; };
+		B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		B20CC83727E66437007A96E3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B20CC83A27E66437007A96E3 /* Medo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Medo.xcdatamodel; sourceTree = "<group>"; };
 		B20CC83C27E66437007A96E3 /* Medo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Medo.entitlements; sourceTree = "<group>"; };
+		B20CC84327E66489007A96E3 /* MainHostingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHostingVC.swift; sourceTree = "<group>"; };
+		B20CC84B27E66503007A96E3 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		B20CC84C27E66503007A96E3 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		B20CC85027E666B2007A96E3 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		B20CC85327E66859007A96E3 /* TaskEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEnums.swift; sourceTree = "<group>"; };
+		B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +68,17 @@
 		B20CC82D27E66434007A96E3 /* Medo */ = {
 			isa = PBXGroup;
 			children = (
-				B20CC82E27E66434007A96E3 /* MedoApp.swift */,
-				B20CC83027E66434007A96E3 /* ContentView.swift */,
-				B20CC83227E66437007A96E3 /* Assets.xcassets */,
-				B20CC83727E66437007A96E3 /* Persistence.swift */,
 				B20CC83C27E66437007A96E3 /* Medo.entitlements */,
-				B20CC83927E66437007A96E3 /* Medo.xcdatamodeld */,
+				B20CC82E27E66434007A96E3 /* MedoApp.swift */,
+				B20CC84527E664C1007A96E3 /* Views */,
+				B20CC84627E664C6007A96E3 /* ViewModels */,
+				B20CC85227E6684C007A96E3 /* Models */,
+				B20CC84227E6647A007A96E3 /* ViewController */,
+				B20CC84827E664DF007A96E3 /* Extensions */,
+				B20CC84927E664E5007A96E3 /* Helpers */,
 				B20CC83427E66437007A96E3 /* Preview Content */,
+				B20CC83227E66437007A96E3 /* Assets.xcassets */,
+				B20CC83927E66437007A96E3 /* Medo.xcdatamodeld */,
 			);
 			path = Medo;
 			sourceTree = "<group>";
@@ -73,6 +89,56 @@
 				B20CC83527E66437007A96E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B20CC84227E6647A007A96E3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B20CC84327E66489007A96E3 /* MainHostingVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B20CC84527E664C1007A96E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B20CC83027E66434007A96E3 /* ContentView.swift */,
+				B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B20CC84627E664C6007A96E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B20CC85027E666B2007A96E3 /* TaskViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B20CC84827E664DF007A96E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B20CC84927E664E5007A96E3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B20CC83727E66437007A96E3 /* Persistence.swift */,
+				B20CC84B27E66503007A96E3 /* EventMonitor.swift */,
+				B20CC84C27E66503007A96E3 /* StatusBarController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B20CC85227E6684C007A96E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B20CC85327E66859007A96E3 /* TaskEnums.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +212,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B20CC83827E66437007A96E3 /* Persistence.swift in Sources */,
+				B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */,
 				B20CC83127E66434007A96E3 /* ContentView.swift in Sources */,
+				B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */,
+				B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */,
+				B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */,
+				B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */,
 				B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */,
 				B20CC82F27E66434007A96E3 /* MedoApp.swift in Sources */,
+				B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

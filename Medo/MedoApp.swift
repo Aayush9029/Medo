@@ -10,11 +10,29 @@ import SwiftUI
 @main
 struct MedoApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject private var statusBarController = StatusBarController()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            //            Thanks SwiftUI
+            ZStack {
+                EmptyView()
+            }
+            .hidden()
+            .onAppear {
+                setupPopupMenu()
+            }
         }
+    }
+}
+
+extension MedoApp {
+    private func setupPopupMenu() {
+        let contentView = ContentView()
+            .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        let popover = NSPopover()
+        popover.contentViewController = MainHostingVC(rootView: contentView)
+        popover.contentSize = NSSize(width: 360, height: 420)
+        statusBarController.start(with: popover)
     }
 }

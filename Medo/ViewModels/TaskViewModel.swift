@@ -1,0 +1,109 @@
+//
+//  TaskViewModel.swift
+//  Medo
+//
+//  Created by Aayush Pokharel on 2022-03-19.
+//
+
+import CoreData
+import Foundation
+import SwiftUI
+
+class TaskViewModel: ObservableObject {
+    
+    //    Default Inititaion
+    @Published var id = UUID()
+    @Published var title = ""
+    @Published var priority = Priority.low.rawValue
+    @Published var done = false
+    @Published var timestamp = Date()
+
+    //    Add/Edit View Shown
+    @Published var addEditViewShown = false
+
+    //     This is just for the add data UI, not saved in core data.
+    @Published var height: CGFloat = 0
+
+    //    Storing the updated item
+    @Published var updateItem: Task!
+
+    //    Functions called to write data to create new task item or update existing one.
+    func writeData(context: NSManagedObjectContext) {
+        print(title, priority)
+        if updateItem != nil {
+            //            Updating old data
+            updateItem.title = title
+            updateItem.priority = priority
+            updateItem.timestamp = timestamp
+        } else {
+            //            Creating new item
+            let newTask = Task(context: context)
+            newTask.title = title
+            newTask.done = done
+            newTask.id = id
+            newTask.timestamp = timestamp
+        }
+
+        //        Saving the data
+        do {
+            try context.save()
+            self.resetValues()
+            //            closing the add/edit view
+            addEditViewShown.toggle()
+            
+
+        } catch {
+            print("Could not add / update the task:", error.localizedDescription)
+        }
+    }
+
+    func addNewData() {
+        addEditViewShown.toggle()
+    }
+
+    func editData(item: Task) {
+        print("editing \(item.title ?? "Untitled")")
+        updateItem = item
+        title = updateItem.title ?? "Untitled"
+        priority = updateItem.priority ?? Priority.low.rawValue
+        id = updateItem.id ?? UUID()
+        addEditViewShown.toggle()
+    }
+
+    func toggleArchive(item: Task, context: NSManagedObjectContext) {
+        print("archiving \(String(describing: item.title))")
+        item.done.toggle()
+        do {
+            try context.save()
+        } catch {
+            print("Could not archive task:", error.localizedDescription)
+        }
+    }
+
+    func delete(item: Task, context: NSManagedObjectContext) {
+        context.delete(item)
+
+        do {
+            try context.save()
+        } catch {
+            print("Could not delete the task:", error.localizedDescription)
+        }
+        id = UUID()
+    }
+    
+    func selectItem(item: Task) {
+        title = item.title ?? "Untitled"
+        priority = item.priority ?? Priority.low.rawValue
+        id = item.id ?? UUID()
+    }
+    
+    
+    func resetValues(){
+        //            clearing the values so next time view appears it's a clean slate
+        title = ""
+        priority = Priority.low.rawValue
+        id = UUID()
+        timestamp = Date()
+        updateItem = nil
+    }
+}
