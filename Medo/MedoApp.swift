@@ -23,16 +23,21 @@ struct MedoApp: App {
                 setupPopupMenu()
             }
         }
+        Settings {
+            Text("Settings")
+                .frame(width: 300, height: 400)
+        }
     }
 }
 
+// MARK: - Setting up PopUp Menu
 extension MedoApp {
     private func setupPopupMenu() {
         let contentView = ContentView()
             .environment(\.managedObjectContext, persistenceController.container.viewContext)
         let popover = NSPopover()
         popover.contentViewController = MainHostingVC(rootView: contentView)
-        popover.contentSize = NSSize(width: 360, height: 420)
+        popover.contentSize = NSSize(width: 360, height: 520)
         statusBarController.start(with: popover)
     }
 }

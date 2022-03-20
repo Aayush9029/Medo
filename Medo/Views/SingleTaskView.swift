@@ -84,8 +84,8 @@ struct SingleTaskView_Previews: PreviewProvider {
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .short
+    formatter.dateStyle = .full
+    formatter.timeStyle = .medium
     return formatter
 }()
 

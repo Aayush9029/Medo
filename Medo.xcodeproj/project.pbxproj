@@ -19,6 +19,12 @@
 		B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85027E666B2007A96E3 /* TaskViewModel.swift */; };
 		B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85327E66859007A96E3 /* TaskEnums.swift */; };
 		B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */; };
+		B255313227E6901800E813A1 /* CircularButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313127E6901800E813A1 /* CircularButtonModifier.swift */; };
+		B255313427E690DA00E813A1 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313327E690DA00E813A1 /* View+Extensions.swift */; };
+		B255313627E6924300E813A1 /* EmptyTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313527E6924300E813A1 /* EmptyTaskView.swift */; };
+		B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313727E6AEB600E813A1 /* TasksListView.swift */; };
+		B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313927E6B00200E813A1 /* TaskContextMenu.swift */; };
+		B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313C27E6B2C400E813A1 /* BottomBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		B20CC85027E666B2007A96E3 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		B20CC85327E66859007A96E3 /* TaskEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEnums.swift; sourceTree = "<group>"; };
 		B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskView.swift; sourceTree = "<group>"; };
+		B255313127E6901800E813A1 /* CircularButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButtonModifier.swift; sourceTree = "<group>"; };
+		B255313327E690DA00E813A1 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		B255313527E6924300E813A1 /* EmptyTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTaskView.swift; sourceTree = "<group>"; };
+		B255313727E6AEB600E813A1 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
+		B255313927E6B00200E813A1 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
+		B255313C27E6B2C400E813A1 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			children = (
 				B20CC83C27E66437007A96E3 /* Medo.entitlements */,
 				B20CC82E27E66434007A96E3 /* MedoApp.swift */,
+				B255313027E6900100E813A1 /* ViewModifiers */,
 				B20CC84527E664C1007A96E3 /* Views */,
 				B20CC84627E664C6007A96E3 /* ViewModels */,
 				B20CC85227E6684C007A96E3 /* Models */,
@@ -102,7 +115,9 @@
 		B20CC84527E664C1007A96E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B255313B27E6B27200E813A1 /* SubViews */,
 				B20CC83027E66434007A96E3 /* ContentView.swift */,
+				B255313727E6AEB600E813A1 /* TasksListView.swift */,
 				B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */,
 			);
 			path = Views;
@@ -119,6 +134,7 @@
 		B20CC84827E664DF007A96E3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B255313327E690DA00E813A1 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -139,6 +155,24 @@
 				B20CC85327E66859007A96E3 /* TaskEnums.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B255313027E6900100E813A1 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				B255313127E6901800E813A1 /* CircularButtonModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		B255313B27E6B27200E813A1 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				B255313927E6B00200E813A1 /* TaskContextMenu.swift */,
+				B255313C27E6B2C400E813A1 /* BottomBarView.swift */,
+				B255313527E6924300E813A1 /* EmptyTaskView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,15 +245,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B255313627E6924300E813A1 /* EmptyTaskView.swift in Sources */,
 				B20CC83827E66437007A96E3 /* Persistence.swift in Sources */,
 				B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */,
+				B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */,
 				B20CC83127E66434007A96E3 /* ContentView.swift in Sources */,
 				B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */,
 				B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */,
+				B255313227E6901800E813A1 /* CircularButtonModifier.swift in Sources */,
+				B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */,
+				B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */,
 				B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */,
 				B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */,
 				B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */,
 				B20CC82F27E66434007A96E3 /* MedoApp.swift in Sources */,
+				B255313427E690DA00E813A1 /* View+Extensions.swift in Sources */,
 				B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +394,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,6 +422,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

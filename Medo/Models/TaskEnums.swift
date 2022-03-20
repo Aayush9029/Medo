@@ -10,7 +10,7 @@ import Foundation
 struct Constants {}
 
 enum Priority: String {
-    case low = "low"
-    case medium = "medium"
-    case high = "high"
+    case low = "1"
+    case medium = "2"
+    case high = "3"
 }

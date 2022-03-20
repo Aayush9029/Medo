@@ -18,11 +18,8 @@ class TaskViewModel: ObservableObject {
     @Published var done = false
     @Published var timestamp = Date()
 
-    //    Add/Edit View Shown
-    @Published var addEditViewShown = false
-
     //     This is just for the add data UI, not saved in core data.
-    @Published var height: CGFloat = 0
+    @Published var confrimDelete: Bool = false
 
     //    Storing the updated item
     @Published var updateItem: Task!
@@ -48,36 +45,27 @@ class TaskViewModel: ObservableObject {
         do {
             try context.save()
             self.resetValues()
-            //            closing the add/edit view
-            addEditViewShown.toggle()
-            
 
         } catch {
             print("Could not add / update the task:", error.localizedDescription)
         }
     }
+    
+    func updatePriority(item: Task, context: NSManagedObjectContext, priority: Priority){
+        item.priority = priority.rawValue
+        do {
+            try context.save()
 
-    func addNewData() {
-        addEditViewShown.toggle()
+        } catch {
+            print("Could not update the  priority:", error.localizedDescription)
+        }
     }
-
     func editData(item: Task) {
         print("editing \(item.title ?? "Untitled")")
         updateItem = item
         title = updateItem.title ?? "Untitled"
         priority = updateItem.priority ?? Priority.low.rawValue
         id = updateItem.id ?? UUID()
-        addEditViewShown.toggle()
-    }
-
-    func toggleArchive(item: Task, context: NSManagedObjectContext) {
-        print("archiving \(String(describing: item.title))")
-        item.done.toggle()
-        do {
-            try context.save()
-        } catch {
-            print("Could not archive task:", error.localizedDescription)
-        }
     }
 
     func delete(item: Task, context: NSManagedObjectContext) {
@@ -92,6 +80,7 @@ class TaskViewModel: ObservableObject {
     }
     
     func selectItem(item: Task) {
+        updateItem = item
         title = item.title ?? "Untitled"
         priority = item.priority ?? Priority.low.rawValue
         id = item.id ?? UUID()
