@@ -1,5 +1,5 @@
 //
-//  GeneralPrefrencesView.swift
+//  PrefrencesView.swift
 //  Medo
 //
 //  Created by Aayush Pokharel on 2022-03-19.
@@ -7,13 +7,16 @@
 
 import SwiftUI
 
-struct GeneralPrefrencesView: View {
+struct PrefrencesView: View {
     var body: some View {
         TabView {
+            PrefrencesGeneralView()
+                .tabItem {
+                Label("General", systemImage: "gear")
+                }
             PrefrencesPowerUserView()
                 .tabItem {
                     Label("Power User", systemImage: "bolt.fill")
-                        .foregroundStyle(.teal)
                 }
 
             PrefrencesUsageView()
@@ -29,8 +32,8 @@ struct GeneralPrefrencesView: View {
     }
 }
 
-struct GeneralPrefrencesView_Previews: PreviewProvider {
+struct PrefrencesView_Previews: PreviewProvider {
     static var previews: some View {
-        GeneralPrefrencesView()
+        PrefrencesView()
     }
 }

@@ -25,11 +25,12 @@
 		B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313727E6AEB600E813A1 /* TasksListView.swift */; };
 		B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313927E6B00200E813A1 /* TaskContextMenu.swift */; };
 		B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313C27E6B2C400E813A1 /* BottomBarView.swift */; };
-		B255314027E6DA4000E813A1 /* GeneralPrefrencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313F27E6DA4000E813A1 /* GeneralPrefrencesView.swift */; };
+		B255314027E6DA4000E813A1 /* PrefrencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313F27E6DA4000E813A1 /* PrefrencesView.swift */; };
 		B255314227E6DB2000E813A1 /* AppStorageStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314127E6DB2000E813A1 /* AppStorageStrings.swift */; };
 		B255314427E6DBC600E813A1 /* PrefrencesUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314327E6DBC600E813A1 /* PrefrencesUsageView.swift */; };
 		B255314627E6E08600E813A1 /* PrefrencesAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */; };
 		B255314827E6E89F00E813A1 /* PrefrencesPowerUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */; };
+		B27A85B927E6F30100E3C48D /* PrefrencesGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A85B827E6F30100E3C48D /* PrefrencesGeneralView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,11 +54,12 @@
 		B255313727E6AEB600E813A1 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
 		B255313927E6B00200E813A1 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
 		B255313C27E6B2C400E813A1 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
-		B255313F27E6DA4000E813A1 /* GeneralPrefrencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPrefrencesView.swift; sourceTree = "<group>"; };
+		B255313F27E6DA4000E813A1 /* PrefrencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesView.swift; sourceTree = "<group>"; };
 		B255314127E6DB2000E813A1 /* AppStorageStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageStrings.swift; sourceTree = "<group>"; };
 		B255314327E6DBC600E813A1 /* PrefrencesUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesUsageView.swift; sourceTree = "<group>"; };
 		B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesAboutView.swift; sourceTree = "<group>"; };
 		B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesPowerUserView.swift; sourceTree = "<group>"; };
+		B27A85B827E6F30100E3C48D /* PrefrencesGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesGeneralView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +192,8 @@
 		B255313E27E6DA1B00E813A1 /* PrefrencesView */ = {
 			isa = PBXGroup;
 			children = (
-				B255313F27E6DA4000E813A1 /* GeneralPrefrencesView.swift */,
+				B255313F27E6DA4000E813A1 /* PrefrencesView.swift */,
+				B27A85B827E6F30100E3C48D /* PrefrencesGeneralView.swift */,
 				B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */,
 				B255314327E6DBC600E813A1 /* PrefrencesUsageView.swift */,
 				B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */,
@@ -276,10 +279,11 @@
 				B20CC83127E66434007A96E3 /* ContentView.swift in Sources */,
 				B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */,
 				B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */,
+				B27A85B927E6F30100E3C48D /* PrefrencesGeneralView.swift in Sources */,
 				B255314427E6DBC600E813A1 /* PrefrencesUsageView.swift in Sources */,
 				B255313227E6901800E813A1 /* CircularButtonModifier.swift in Sources */,
 				B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */,
-				B255314027E6DA4000E813A1 /* GeneralPrefrencesView.swift in Sources */,
+				B255314027E6DA4000E813A1 /* PrefrencesView.swift in Sources */,
 				B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */,
 				B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */,
 				B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */,

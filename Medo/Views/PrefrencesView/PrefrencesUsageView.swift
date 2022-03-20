@@ -17,8 +17,7 @@ struct PrefrencesUsageView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 Text("App Usage Stats")
-                    .font(.title.bold())
-                    .foregroundStyle(.secondary)
+                    .font(.title2.bold())
                     .padding(.vertical)
 
                 PrefrencesSingleLine(icon: "plus", title: "Total # of Tasks Added", value: usage_add)

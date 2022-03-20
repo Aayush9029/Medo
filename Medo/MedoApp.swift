@@ -27,7 +27,7 @@ struct MedoApp: App {
             }
         }
         Settings {
-            GeneralPrefrencesView()
+            PrefrencesView()
                 .frame(width: 360, height: 400)
         }
     }

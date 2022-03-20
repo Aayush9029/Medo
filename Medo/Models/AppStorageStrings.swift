@@ -13,4 +13,10 @@ struct AppStorageStrings {
     static let usage_delete = "TasksDeletedCount"
     static let usage_edit = "TasksEditedCount"
     static let app_open_count = "AppOpenCount"
+
+//    App settings
+    static let launch_at_login = "Launch at login"
+    static let show_time_stamp = "Show timestamp"
+    static let share_usage_data = "Share Usage Data"
+
 }

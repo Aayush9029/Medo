@@ -78,6 +78,17 @@ struct PrefrencesPowerUserView: View {
                             .background(.thinMaterial)
                             .cornerRadius(6)
                         }
+                        Group {
+                            Text("Shows the top most tasks in a floating window")
+                            HStack(spacing: 0) {
+                                Text("medo://show-all")
+                                    .foregroundColor(.blue)
+                                    .bold()
+                            }
+                            .padding(4)
+                            .background(.thinMaterial)
+                            .cornerRadius(6)
+                        }
                     }
                     .padding(.bottom)
                 }
@@ -93,6 +104,17 @@ struct PrefrencesPowerUserView: View {
                         SingleKeyView(image: "command")
                         Image(systemName: "plus")
                         SingleKeyView(image: "return")
+                    }
+                    .padding(10)
+                    .background(.thinMaterial)
+                    .cornerRadius(6)
+
+                    HStack {
+                        Text("Toggle Floating View")
+                        Spacer()
+                        SingleKeyView(image: "command")
+                        Image(systemName: "plus")
+                        SingleKeyView(image: "f.square")
                     }
                     .padding(10)
                     .background(.thinMaterial)
