@@ -30,8 +30,10 @@ struct MedoApp: App {
 
             .onOpenURL { url in
                 guard url.isDeeplink else { return }
-
+                print(url)
                 if let parsed = URLParser.parse(url.absoluteString)?.first {
+                    print(parsed)
+
                     switch parsed.key {
                     case .addTask:
                         if let task = parsed.value {
@@ -40,6 +42,7 @@ struct MedoApp: App {
                             taskViewModel.writeData()
                         }
                     case .deleteTop:
+                        print("Deleting")
                         if let topTask = taskViewModel.tasks.first {
                             taskViewModel.delete(item: topTask)
                         }

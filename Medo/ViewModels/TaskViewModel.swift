@@ -39,6 +39,9 @@ class TaskViewModel: ObservableObject {
 
     //    Functions called to write data to create new task item or update existing one.
     func writeData() {
+        if title.count == 0 {
+            return
+        }
         if updateItem != nil {
             usage_edit += 1
 

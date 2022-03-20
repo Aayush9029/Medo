@@ -8,7 +8,7 @@
 import Foundation
 
 enum Priority: String, CaseIterable {
-    case low = "1"
+    case low = "3"
     case medium = "2"
-    case high = "3"
+    case high = "1"
 }

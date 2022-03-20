@@ -66,7 +66,7 @@ struct PrefrencesPowerUserView: View {
                                 Text("&p=")
                                     .foregroundColor(.blue)
                                     .bold()
-                                Text("low, high or medium")
+                                Text("1, 2 or 3")
                                     .foregroundStyle(.secondary)
                             }
                             .padding(4)

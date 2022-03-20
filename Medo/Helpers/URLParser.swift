@@ -27,10 +27,13 @@ class URLParser {
         guard let host = URLComponents(string: url)?.host else {
             return nil
         }
+        print("Host: \(host)")
         if let urlType = UrlParseType(rawValue: host) {
-            guard let  query = URLComponents(string: url)?.queryItems else {return nil}
+            print("UrlParseType: \(urlType)")
+
             switch urlType {
             case .addTask:
+                guard let  query = URLComponents(string: url)?.queryItems else { return nil }
                 return [UrlParseType.addTask: URLParser.get_task(items: query)]
             case .deleteTop:
                 return [UrlParseType.deleteTop: nil]
@@ -56,8 +59,8 @@ class URLParser {
         }
         if let priorityQuery = items.last {
             if priorityQuery.name == "p" {
-                if Priority(rawValue: priorityQuery.value ?? "1") != nil {
-                    priority = priorityQuery.value ?? "1"
+                if let r_priority = Priority(rawValue: priorityQuery.value ?? "3") {
+                    priority = r_priority.rawValue
                 }
             }
         }
