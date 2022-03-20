@@ -11,24 +11,22 @@ struct SingleTaskView: View {
     let title: String
     let priority: Priority
     let timestamp: Date
-    
-    
-    var body: some View {
 
+    var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                HStack{
+                HStack {
                     Text(title)
                         .font(.title3)
                         .fontWeight(.medium)
                         .foregroundStyle(.primary)
                 }
-                
+
                 Text(timestamp, formatter: itemFormatter)
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
             }
-            
+
             Group {
                 switch priority {
                 case .low:
@@ -51,13 +49,11 @@ struct SingleTaskView: View {
     }
 }
 
-
 struct PriorityLineView: View {
     let color1: Color
     let color2: Color
-    
-    var body: some View{
-        
+
+    var body: some View {
         Rectangle()
             .fill(LinearGradient(
                 gradient: .init(colors: [color1, color2]),
@@ -69,11 +65,12 @@ struct PriorityLineView: View {
             .shadow(color: color1.opacity(0.5), radius: 8, x: 0, y: -2)
     }
 }
+
 struct SingleTaskView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            VStack{
+            VStack {
                 SingleTaskView(title: "Study for 2001 Exam", priority: .medium, timestamp: Date())
                 SingleTaskView(title: "Finish SimuText Lab before 20th", priority: .medium, timestamp: Date())
             }.padding()
@@ -88,4 +85,3 @@ private let itemFormatter: DateFormatter = {
     formatter.timeStyle = .medium
     return formatter
 }()
-

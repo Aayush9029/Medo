@@ -5,14 +5,13 @@
 //  Created by Aayush Pokharel on 2022-03-19.
 //
 
-
 import SwiftUI
 
 struct CircularButtonModifier: ViewModifier {
     @State var hovering: Bool = false
-    
+
     let color: Color
-    
+
     func body(content: Content) -> some View {
         content
             .font(.body.bold())

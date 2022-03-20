@@ -31,6 +31,7 @@ struct MedoApp: App {
 }
 
 // MARK: - Setting up PopUp Menu
+
 extension MedoApp {
     private func setupPopupMenu() {
         let contentView = ContentView()

@@ -10,17 +10,17 @@ import SwiftUI
 struct TaskContextMenu: View {
     @EnvironmentObject var taskViewModel: TaskViewModel
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     let task: Task
-    
+
     var body: some View {
-        VStack{
+        VStack {
             Button {
                 taskViewModel.selectItem(item: task)
             } label: {
                 Label("Edit Task", systemImage: "pencil")
             }
-            Button{
+            Button {
                 taskViewModel.delete(item: task, context: viewContext)
             } label: {
                 Label("Delete Task", systemImage: "trash")

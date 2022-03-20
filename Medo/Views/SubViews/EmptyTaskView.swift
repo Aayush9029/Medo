@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmptyTaskView: View {
     let isEmpty: Bool
-    
+
     var body: some View {
         VStack {
             Image(systemName: "shippingbox")

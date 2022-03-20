@@ -9,12 +9,12 @@ import SwiftUI
 
 struct BottomBarView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @EnvironmentObject var taskViewModel: TaskViewModel
-    
+
     var body: some View {
         Group {
-            HStack{
+            HStack {
                 Group {
                     Button(action: {
                         taskViewModel.writeData(context: viewContext)
@@ -28,9 +28,8 @@ struct BottomBarView: View {
                     .opacity(taskViewModel.title.count > 0 ? 1 : 0.25)
                     .disabled(taskViewModel.title.count == 0)
                 }
-                        ScrollViewReader { scrollView in
-                            ScrollView(.horizontal, showsIndicators: true) {
-
+                ScrollViewReader { scrollView in
+                    ScrollView(.horizontal, showsIndicators: true) {
                         TextField("Task Title", text: $taskViewModel.title)
                             .id("TitleTextField")
                             .font(.title2)
@@ -39,15 +38,12 @@ struct BottomBarView: View {
                                 scrollView.scrollTo("TitleTextField", anchor: .trailing)
                             }
                     }
-                            
                 }
-                
+
                 Spacer()
-                
+
                 Group {
-                    
-                    Button(action:
-                            {
+                    Button(action: {
                         taskViewModel.confrimDelete.toggle()
                     }
                     ) {

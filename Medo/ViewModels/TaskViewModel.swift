@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 class TaskViewModel: ObservableObject {
-    
     //    Default Inititaion
     @Published var id = UUID()
     @Published var title = ""
@@ -44,14 +43,14 @@ class TaskViewModel: ObservableObject {
         //        Saving the data
         do {
             try context.save()
-            self.resetValues()
+            resetValues()
 
         } catch {
             print("Could not add / update the task:", error.localizedDescription)
         }
     }
-    
-    func updatePriority(item: Task, context: NSManagedObjectContext, priority: Priority){
+
+    func updatePriority(item: Task, context: NSManagedObjectContext, priority: Priority) {
         item.priority = priority.rawValue
         do {
             try context.save()
@@ -60,6 +59,7 @@ class TaskViewModel: ObservableObject {
             print("Could not update the  priority:", error.localizedDescription)
         }
     }
+
     func editData(item: Task) {
         print("editing \(item.title ?? "Untitled")")
         updateItem = item
@@ -78,16 +78,15 @@ class TaskViewModel: ObservableObject {
         }
         id = UUID()
     }
-    
+
     func selectItem(item: Task) {
         updateItem = item
         title = item.title ?? "Untitled"
         priority = item.priority ?? Priority.low.rawValue
         id = item.id ?? UUID()
     }
-    
-    
-    func resetValues(){
+
+    func resetValues() {
         //            clearing the values so next time view appears it's a clean slate
         title = ""
         priority = Priority.low.rawValue

@@ -10,22 +10,22 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Task.priority, ascending: true)],
         animation: .default
     )
     var items: FetchedResults<Task>
-    
+
     @StateObject var taskViewModel = TaskViewModel()
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             EmptyTaskView(isEmpty: items.isEmpty)
-            
+
             TasksListView()
                 .environmentObject(taskViewModel)
-            
+
             BottomBarView()
                 .environmentObject(taskViewModel)
         }
@@ -40,7 +40,6 @@ struct ContentView: View {
     }
 }
 
-
 extension ContentView {
     private func deleteAll() {
         withAnimation {
@@ -54,7 +53,6 @@ extension ContentView {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
