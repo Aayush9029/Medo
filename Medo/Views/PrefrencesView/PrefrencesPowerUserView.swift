@@ -18,7 +18,7 @@ struct PrefrencesPowerUserView: View {
 
                     VStack(alignment: .leading) {
                         Group {
-                            //                        MARK: Add Tasks
+                            // MARK: Add Tasks
 
                             Text("Quickly Add Tasks By Sending a Request")
                             HStack(spacing: 0) {
@@ -39,7 +39,7 @@ struct PrefrencesPowerUserView: View {
                             .cornerRadius(6)
                         }
 
-                        //                        MARK: Delete Tasks
+                        // MARK: Delete Tasks
 
                         Group {
                             Text("Delete the task on top")
@@ -65,7 +65,7 @@ struct PrefrencesPowerUserView: View {
                             .cornerRadius(6)
                         }
 
-                        //                        MARK: Show Tasks
+                        // MARK: Show Tasks
 
                         Group {
                             Text("Shows the top most tasks in a floating window")
