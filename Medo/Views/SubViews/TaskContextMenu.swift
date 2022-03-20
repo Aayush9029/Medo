@@ -9,8 +9,7 @@ import SwiftUI
 
 struct TaskContextMenu: View {
     @EnvironmentObject var taskViewModel: TaskViewModel
-    @Environment(\.managedObjectContext) private var viewContext
-
+    
     let task: Task
 
     var body: some View {
@@ -21,20 +20,20 @@ struct TaskContextMenu: View {
                 Label("Edit Task", systemImage: "pencil")
             }
             Button {
-                taskViewModel.delete(item: task, context: viewContext)
+                taskViewModel.delete(item: task)
             } label: {
                 Label("Delete Task", systemImage: "trash")
             }
             Divider()
             Menu("Priority") {
                 Button("Low") {
-                    taskViewModel.updatePriority(item: task, context: viewContext, priority: .low)
+                    taskViewModel.updatePriority(item: task,  priority: .low)
                 }
                 Button("Medium") {
-                    taskViewModel.updatePriority(item: task, context: viewContext, priority: .medium)
+                    taskViewModel.updatePriority(item: task,  priority: .medium)
                 }
                 Button("High") {
-                    taskViewModel.updatePriority(item: task, context: viewContext, priority: .high)
+                    taskViewModel.updatePriority(item: task, priority: .high)
                 }
             }
         }

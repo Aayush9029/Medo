@@ -37,7 +37,6 @@ struct ContentView: View {
                 secondaryButton: .destructive(Text("Remove all"), action: deleteAll)
             )
         }
-        
     }
 }
 
@@ -45,7 +44,7 @@ extension ContentView {
     private func deleteAll() {
         withAnimation {
             items.forEach { item in
-                taskViewModel.delete(item: item, context: viewContext)
+                taskViewModel.delete(item: item)
             }
         }
     }

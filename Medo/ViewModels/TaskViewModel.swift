@@ -10,6 +10,14 @@ import Foundation
 import SwiftUI
 
 class TaskViewModel: ObservableObject {
+    let persistenceController = PersistenceController.shared
+
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Task.priority, ascending: true)],
+        animation: .default
+    )
+    var tasks: FetchedResults<Task>
+    
     //    Default Inititaion
     @Published var id = UUID()
     @Published var title = ""
@@ -30,7 +38,7 @@ class TaskViewModel: ObservableObject {
     @AppStorage(AppStorageStrings.usage_edit) var usage_edit = 0
 
     //    Functions called to write data to create new task item or update existing one.
-    func writeData(context: NSManagedObjectContext) {
+    func writeData() {
         if updateItem != nil {
             usage_edit += 1
 
@@ -42,7 +50,7 @@ class TaskViewModel: ObservableObject {
             usage_add += 1
 
             //            Creating new item
-            let newTask = Task(context: context)
+            let newTask = Task(context: persistenceController.container.viewContext)
             newTask.title = title
             newTask.priority = priority
             newTask.done = done
@@ -52,7 +60,7 @@ class TaskViewModel: ObservableObject {
 
         //        Saving the data
         do {
-            try context.save()
+            try persistenceController.container.viewContext.save()
             resetValues()
 
         } catch {
@@ -60,10 +68,10 @@ class TaskViewModel: ObservableObject {
         }
     }
 
-    func updatePriority(item: Task, context: NSManagedObjectContext, priority: Priority) {
+    func updatePriority(item: Task, priority: Priority) {
         item.priority = priority.rawValue
         do {
-            try context.save()
+            try persistenceController.container.viewContext.save()
 
         } catch {
             print("Could not update the  priority:", error.localizedDescription)
@@ -78,12 +86,12 @@ class TaskViewModel: ObservableObject {
         id = updateItem.id ?? UUID()
     }
 
-    func delete(item: Task, context: NSManagedObjectContext) {
+    func delete(item: Task) {
         usage_delete += 1
-        context.delete(item)
+        persistenceController.container.viewContext.delete(item)
 
         do {
-            try context.save()
+            try persistenceController.container.viewContext.save()
         } catch {
             print("Could not delete the task:", error.localizedDescription)
         }

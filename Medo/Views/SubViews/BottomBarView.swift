@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct BottomBarView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
+    
     @EnvironmentObject var taskViewModel: TaskViewModel
 
     var body: some View {
@@ -17,7 +16,7 @@ struct BottomBarView: View {
             HStack {
                 Group {
                     Button(action: {
-                        taskViewModel.writeData(context: viewContext)
+                        taskViewModel.writeData()
                     }) {
                         Label("Add Item", systemImage: taskViewModel.updateItem != nil ? "pencil" : "plus")
                             .labelStyle(.iconOnly)

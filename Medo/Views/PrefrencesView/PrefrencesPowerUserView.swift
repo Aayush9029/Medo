@@ -64,7 +64,7 @@ struct PrefrencesPowerUserView: View {
 
                                 Text("taskTitle")
                                     .foregroundStyle(.secondary)
-                                Text("?p=")
+                                Text("&p=")
                                     .foregroundColor(.blue)
                                     .bold()
                                 Text("low, high or medium")

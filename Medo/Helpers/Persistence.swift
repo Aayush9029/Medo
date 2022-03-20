@@ -16,6 +16,7 @@ struct PersistenceController {
         for i in 0 ..< 10 {
             let newItem = Task(context: viewContext)
             newItem.title = "Untitled \(i)"
+            newItem.priority = Priority.allCases.randomElement()?.rawValue
             newItem.id = UUID()
             newItem.timestamp = Date()
         }
