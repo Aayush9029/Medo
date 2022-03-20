@@ -44,6 +44,7 @@ class TaskViewModel: ObservableObject {
             //            Creating new item
             let newTask = Task(context: context)
             newTask.title = title
+            newTask.priority = priority
             newTask.done = done
             newTask.id = id
             newTask.timestamp = timestamp

@@ -17,7 +17,7 @@ struct ContentView: View {
     )
     var items: FetchedResults<Task>
 
-    @StateObject var taskViewModel = TaskViewModel()
+    @EnvironmentObject var taskViewModel: TaskViewModel
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -37,6 +37,7 @@ struct ContentView: View {
                 secondaryButton: .destructive(Text("Remove all"), action: deleteAll)
             )
         }
+        
     }
 }
 

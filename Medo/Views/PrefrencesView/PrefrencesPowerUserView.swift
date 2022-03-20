@@ -7,6 +7,43 @@
 
 import SwiftUI
 
+
+struct SingleUrlSchemeView: View {
+    let title: String
+    let url: String
+    
+    var body: some View{
+        Group {
+            Text(title)
+            Text(url)
+                .foregroundColor(.blue)
+                .bold()
+            .padding(4)
+            .background(.thinMaterial)
+            .cornerRadius(6)
+        }
+    }
+}
+
+struct KeyboardShortCutView: View {
+    let title: String
+    let image1: String
+    let image2: String
+
+    var body: some View {
+        HStack {
+            Text(title)
+            Spacer()
+            SingleKeyView(image: image1)
+            Image(systemName: "plus")
+            SingleKeyView(image: image2)
+        }
+        .padding(10)
+        .background(.thinMaterial)
+        .cornerRadius(6)
+    }
+}
+
 struct PrefrencesPowerUserView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -18,8 +55,7 @@ struct PrefrencesPowerUserView: View {
 
                     VStack(alignment: .leading) {
                         Group {
-                            // MARK: Add Tasks
-
+                            // MARK: Add Tasks Custom
                             Text("Quickly Add Tasks By Sending a Request")
                             HStack(spacing: 0) {
                                 Text("medo://add-task?title=")
@@ -31,7 +67,7 @@ struct PrefrencesPowerUserView: View {
                                 Text("?p=")
                                     .foregroundColor(.blue)
                                     .bold()
-                                Text("[1, 2 or 3]")
+                                Text("low, high or medium")
                                     .foregroundStyle(.secondary)
                             }
                             .padding(4)
@@ -40,54 +76,15 @@ struct PrefrencesPowerUserView: View {
                         }
 
                         // MARK: Delete Tasks
-
                         Group {
-                            Text("Delete the task on top")
-                            HStack(spacing: 0) {
-                                Text("medo://delete-top")
-                                    .foregroundColor(.blue)
-                                    .bold()
-                            }
-                            .padding(4)
-                            .background(.thinMaterial)
-                            .cornerRadius(6)
-                        }
-
-                        Group {
-                            Text("Delete All Tasks")
-                            HStack(spacing: 0) {
-                                Text("medo://delete-all")
-                                    .foregroundColor(.blue)
-                                    .bold()
-                            }
-                            .padding(4)
-                            .background(.thinMaterial)
-                            .cornerRadius(6)
+                            SingleUrlSchemeView(title: "Delete Task on Top", url: "medo://delete-top")
+                            SingleUrlSchemeView(title: "Delete All Tasks", url: "medo://delete-all")
                         }
 
                         // MARK: Show Tasks
-
                         Group {
-                            Text("Shows the top most tasks in a floating window")
-                            HStack(spacing: 0) {
-                                Text("medo://show-top")
-                                    .foregroundColor(.blue)
-                                    .bold()
-                            }
-                            .padding(4)
-                            .background(.thinMaterial)
-                            .cornerRadius(6)
-                        }
-                        Group {
-                            Text("Shows the top most tasks in a floating window")
-                            HStack(spacing: 0) {
-                                Text("medo://show-all")
-                                    .foregroundColor(.blue)
-                                    .bold()
-                            }
-                            .padding(4)
-                            .background(.thinMaterial)
-                            .cornerRadius(6)
+                            SingleUrlSchemeView(title: "Shows the top most tasks in a floating window", url: "medo://show-top")
+                            SingleUrlSchemeView(title: "Shows the top most tasks in a floating window", url: "medo://show-all")
                         }
                     }
                     .padding(.bottom)
@@ -98,31 +95,20 @@ struct PrefrencesPowerUserView: View {
                 Group {
                     Text("Keyboard Shortcuts")
                         .font(.title2.bold())
-                    HStack {
-                        Text("Add Tasks")
-                        Spacer()
-                        SingleKeyView(image: "command")
-                        Image(systemName: "plus")
-                        SingleKeyView(image: "return")
-                    }
-                    .padding(10)
-                    .background(.thinMaterial)
-                    .cornerRadius(6)
-
-                    HStack {
-                        Text("Toggle Floating View")
-                        Spacer()
-                        SingleKeyView(image: "command")
-                        Image(systemName: "plus")
-                        SingleKeyView(image: "f.square")
-                    }
-                    .padding(10)
-                    .background(.thinMaterial)
-                    .cornerRadius(6)
+                    KeyboardShortCutView(title: "Add Task", image1: "command", image2: "return")
+                    KeyboardShortCutView(title: "Add Task, priority low", image1: "command", image2: "1.square")
+                    KeyboardShortCutView(title: "Add Task, priority high", image1: "command", image2: "2.square")
+                    KeyboardShortCutView(title: "Add Task, priority medium", image1: "command", image2: "3.square")
+                    KeyboardShortCutView(title: "Toggle Floating View", image1: "command", image2: "f.square")
                 }
                 Spacer()
             }
-            .padding()
+            .padding([.horizontal, .top])
+            Text("Note: These aren't global shortcuts")
+                .foregroundStyle(.tertiary)
+            
+            Divider()
+            
         }
     }
 }
@@ -130,7 +116,7 @@ struct PrefrencesPowerUserView: View {
 struct PrefrencesPowerUserView_Previews: PreviewProvider {
     static var previews: some View {
         PrefrencesPowerUserView()
-            .frame(width: 300, height: 400)
+            .frame(width: 320, height: 400)
             .padding()
     }
 }
@@ -140,7 +126,7 @@ struct SingleKeyView: View {
     var body: some View {
         Image(systemName: image)
             .padding(4)
-            .background(.black.opacity(0.5))
+            .background(.black.opacity(0.25))
             .cornerRadius(6)
     }
 }

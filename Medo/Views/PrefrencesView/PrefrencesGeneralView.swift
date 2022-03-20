@@ -8,13 +8,64 @@
 import SwiftUI
 
 struct PrefrencesGeneralView: View {
+    //    App settings
+    @AppStorage(AppStorageStrings.launch_at_login) var launch_at_login = true
+    @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
+    @AppStorage(AppStorageStrings.share_usage_data) var share_usage_data = true
+    
     var body: some View {
-        Text("Agree to giving your 2nd child to satan")
+        VStack(alignment: .leading){
+            List {
+                Section {
+                    HStack {
+                        Label("Launch at login", systemImage: "laptopcomputer.and.arrow.down")
+                            .font(.title3)
+                        Spacer()
+                        Toggle(isOn: $launch_at_login) {}
+                    }
+                } header: {
+                    Text("General")
+                }
+                Section {
+                    HStack {
+                        Label("Show time stamp", systemImage: "calendar")
+                            .font(.title3)
+                        Spacer()
+                        Toggle(isOn: $show_time_stamp) {}
+                    }
+                } header: {
+                    Text("UI / UX")
+                }
+                Section {
+                    VStack {
+                    HStack {
+                        Label("Share Analytics Data", systemImage: "chart.line.uptrend.xyaxis")
+                            .font(.title3)
+                        Spacer()
+                        Toggle(isOn: $share_usage_data) {}
+                    }
+                        HStack {
+                            Label("Share Crash logs", systemImage: "text.quote")
+                                .font(.title3)
+                            Spacer()
+                            Toggle(isOn: $share_usage_data) {}
+                        }
+                    }
+                } header: {
+                    Text("Help Improve the app")
+                }
+
+                }
+                
+                .toggleStyle(.switch)
+                .padding()
+        }
     }
 }
 
 struct PrefrencesGeneralView_Previews: PreviewProvider {
     static var previews: some View {
         PrefrencesGeneralView()
+            .frame(width: 400, height: 400)
     }
 }

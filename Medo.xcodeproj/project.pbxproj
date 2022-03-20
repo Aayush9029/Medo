@@ -60,6 +60,7 @@
 		B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesAboutView.swift; sourceTree = "<group>"; };
 		B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesPowerUserView.swift; sourceTree = "<group>"; };
 		B27A85B827E6F30100E3C48D /* PrefrencesGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesGeneralView.swift; sourceTree = "<group>"; };
+		B2E50DEA27E775FC001E19D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		B20CC82D27E66434007A96E3 /* Medo */ = {
 			isa = PBXGroup;
 			children = (
+				B2E50DEA27E775FC001E19D5 /* Info.plist */,
 				B20CC83C27E66437007A96E3 /* Medo.entitlements */,
 				B20CC82E27E66434007A96E3 /* MedoApp.swift */,
 				B20CC84527E664C1007A96E3 /* Views */,
@@ -426,6 +428,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Medo/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,6 +457,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Medo/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
