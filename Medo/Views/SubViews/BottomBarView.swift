@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BottomBarView: View {
-    
+
     @EnvironmentObject var taskViewModel: TaskViewModel
 
     var body: some View {

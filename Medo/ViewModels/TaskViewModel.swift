@@ -17,7 +17,7 @@ class TaskViewModel: ObservableObject {
         animation: .default
     )
     var tasks: FetchedResults<Task>
-    
+
     //    Default Inititaion
     @Published var id = UUID()
     @Published var title = ""

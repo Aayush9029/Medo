@@ -12,9 +12,9 @@ struct PrefrencesGeneralView: View {
     @AppStorage(AppStorageStrings.launch_at_login) var launch_at_login = true
     @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
     @AppStorage(AppStorageStrings.share_usage_data) var share_usage_data = true
-    
+
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading) {
             List {
                 Section {
                     HStack {
@@ -56,7 +56,7 @@ struct PrefrencesGeneralView: View {
                 }
 
                 }
-                
+
                 .toggleStyle(.switch)
                 .padding()
         }

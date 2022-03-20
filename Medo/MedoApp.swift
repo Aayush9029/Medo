@@ -13,9 +13,9 @@ struct MedoApp: App {
     @StateObject var taskViewModel = TaskViewModel()
 
     @AppStorage(AppStorageStrings.app_open_count) var app_open_count = 0
-        
+
     let urlParser = URLParser()
-    
+
     var body: some Scene {
         WindowGroup {
             //            Thanks SwiftUI
@@ -27,10 +27,10 @@ struct MedoApp: App {
                 setupPopupMenu()
                 app_open_count += 1
             }
-            
+
             .onOpenURL { url in
                 guard url.isDeeplink else { return }
-                
+
                 if let parsed = URLParser.parse(url.absoluteString)?.first {
                     switch parsed.key {
                     case .addTask:

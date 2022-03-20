@@ -21,9 +21,9 @@ enum UrlParseType: String {
 }
 
 class URLParser {
-    
-    static func parse(_ url: String) -> [UrlParseType : TaskModel?]?{
-        
+
+    static func parse(_ url: String) -> [UrlParseType: TaskModel?]? {
+
         guard let host = URLComponents(string: url)?.host else {
             return nil
         }
@@ -31,7 +31,7 @@ class URLParser {
             guard let  query = URLComponents(string: url)?.queryItems else {return nil}
             switch urlType {
             case .addTask:
-                return [UrlParseType.addTask :  URLParser.get_task(items: query)]
+                return [UrlParseType.addTask: URLParser.get_task(items: query)]
             case .deleteTop:
                 return [UrlParseType.deleteTop: nil]
             case .deleteAll:
@@ -44,11 +44,11 @@ class URLParser {
         }
         return nil
     }
-    
+
     static func get_task(items: [URLQueryItem]) -> TaskModel {
         var title: String = "Untitled"
         var priority: String = "low"
-        
+
         if let titleQuery = items.first {
             if titleQuery.name == "title" {
                 title = titleQuery.value ?? "Untitled"
@@ -62,8 +62,5 @@ class URLParser {
 
         return TaskModel(title: title, priority: priority)
     }
-    
-    
-    
-    
+
 }

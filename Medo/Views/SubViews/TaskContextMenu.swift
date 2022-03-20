@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TaskContextMenu: View {
     @EnvironmentObject var taskViewModel: TaskViewModel
-    
+
     let task: Task
 
     var body: some View {
@@ -27,10 +27,10 @@ struct TaskContextMenu: View {
             Divider()
             Menu("Priority") {
                 Button("Low") {
-                    taskViewModel.updatePriority(item: task,  priority: .low)
+                    taskViewModel.updatePriority(item: task, priority: .low)
                 }
                 Button("Medium") {
-                    taskViewModel.updatePriority(item: task,  priority: .medium)
+                    taskViewModel.updatePriority(item: task, priority: .medium)
                 }
                 Button("High") {
                     taskViewModel.updatePriority(item: task, priority: .high)

@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-
 struct SingleUrlSchemeView: View {
     let title: String
     let url: String
-    
-    var body: some View{
+
+    var body: some View {
         Group {
             Text(title)
             Text(url)
@@ -106,9 +105,9 @@ struct PrefrencesPowerUserView: View {
             .padding([.horizontal, .top])
             Text("Note: These aren't global shortcuts")
                 .foregroundStyle(.tertiary)
-            
+
             Divider()
-            
+
         }
     }
 }
