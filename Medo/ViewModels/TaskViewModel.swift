@@ -23,15 +23,24 @@ class TaskViewModel: ObservableObject {
     //    Storing the updated item
     @Published var updateItem: Task!
 
+//    For Fun Stats
+
+    @AppStorage(AppStorageStrings.usage_add) var usage_add = 0
+    @AppStorage(AppStorageStrings.usage_delete) var usage_delete = 0
+    @AppStorage(AppStorageStrings.usage_edit) var usage_edit = 0
+
     //    Functions called to write data to create new task item or update existing one.
     func writeData(context: NSManagedObjectContext) {
-        print(title, priority)
         if updateItem != nil {
+            usage_edit += 1
+
             //            Updating old data
             updateItem.title = title
             updateItem.priority = priority
             updateItem.timestamp = timestamp
         } else {
+            usage_add += 1
+
             //            Creating new item
             let newTask = Task(context: context)
             newTask.title = title
@@ -69,6 +78,7 @@ class TaskViewModel: ObservableObject {
     }
 
     func delete(item: Task, context: NSManagedObjectContext) {
+        usage_delete += 1
         context.delete(item)
 
         do {

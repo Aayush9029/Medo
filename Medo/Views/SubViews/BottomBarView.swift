@@ -28,6 +28,7 @@ struct BottomBarView: View {
                     .opacity(taskViewModel.title.count > 0 ? 1 : 0.25)
                     .disabled(taskViewModel.title.count == 0)
                 }
+
                 ScrollViewReader { scrollView in
                     ScrollView(.horizontal, showsIndicators: true) {
                         TextField("Task Title", text: $taskViewModel.title)

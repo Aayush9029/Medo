@@ -25,6 +25,11 @@
 		B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313727E6AEB600E813A1 /* TasksListView.swift */; };
 		B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313927E6B00200E813A1 /* TaskContextMenu.swift */; };
 		B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313C27E6B2C400E813A1 /* BottomBarView.swift */; };
+		B255314027E6DA4000E813A1 /* GeneralPrefrencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255313F27E6DA4000E813A1 /* GeneralPrefrencesView.swift */; };
+		B255314227E6DB2000E813A1 /* AppStorageStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314127E6DB2000E813A1 /* AppStorageStrings.swift */; };
+		B255314427E6DBC600E813A1 /* PrefrencesUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314327E6DBC600E813A1 /* PrefrencesUsageView.swift */; };
+		B255314627E6E08600E813A1 /* PrefrencesAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */; };
+		B255314827E6E89F00E813A1 /* PrefrencesPowerUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		B255313727E6AEB600E813A1 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
 		B255313927E6B00200E813A1 /* TaskContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskContextMenu.swift; sourceTree = "<group>"; };
 		B255313C27E6B2C400E813A1 /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
+		B255313F27E6DA4000E813A1 /* GeneralPrefrencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPrefrencesView.swift; sourceTree = "<group>"; };
+		B255314127E6DB2000E813A1 /* AppStorageStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageStrings.swift; sourceTree = "<group>"; };
+		B255314327E6DBC600E813A1 /* PrefrencesUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesUsageView.swift; sourceTree = "<group>"; };
+		B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesAboutView.swift; sourceTree = "<group>"; };
+		B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesPowerUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +92,10 @@
 			children = (
 				B20CC83C27E66437007A96E3 /* Medo.entitlements */,
 				B20CC82E27E66434007A96E3 /* MedoApp.swift */,
-				B255313027E6900100E813A1 /* ViewModifiers */,
 				B20CC84527E664C1007A96E3 /* Views */,
 				B20CC84627E664C6007A96E3 /* ViewModels */,
 				B20CC85227E6684C007A96E3 /* Models */,
+				B255313027E6900100E813A1 /* ViewModifiers */,
 				B20CC84227E6647A007A96E3 /* ViewController */,
 				B20CC84827E664DF007A96E3 /* Extensions */,
 				B20CC84927E664E5007A96E3 /* Helpers */,
@@ -115,6 +125,7 @@
 		B20CC84527E664C1007A96E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B255313E27E6DA1B00E813A1 /* PrefrencesView */,
 				B255313B27E6B27200E813A1 /* SubViews */,
 				B20CC83027E66434007A96E3 /* ContentView.swift */,
 				B255313727E6AEB600E813A1 /* TasksListView.swift */,
@@ -153,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				B20CC85327E66859007A96E3 /* TaskEnums.swift */,
+				B255314127E6DB2000E813A1 /* AppStorageStrings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -173,6 +185,17 @@
 				B255313527E6924300E813A1 /* EmptyTaskView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		B255313E27E6DA1B00E813A1 /* PrefrencesView */ = {
+			isa = PBXGroup;
+			children = (
+				B255313F27E6DA4000E813A1 /* GeneralPrefrencesView.swift */,
+				B255314527E6E08600E813A1 /* PrefrencesAboutView.swift */,
+				B255314327E6DBC600E813A1 /* PrefrencesUsageView.swift */,
+				B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */,
+			);
+			path = PrefrencesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,18 +272,23 @@
 				B20CC83827E66437007A96E3 /* Persistence.swift in Sources */,
 				B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */,
 				B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */,
+				B255314227E6DB2000E813A1 /* AppStorageStrings.swift in Sources */,
 				B20CC83127E66434007A96E3 /* ContentView.swift in Sources */,
 				B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */,
 				B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */,
+				B255314427E6DBC600E813A1 /* PrefrencesUsageView.swift in Sources */,
 				B255313227E6901800E813A1 /* CircularButtonModifier.swift in Sources */,
 				B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */,
+				B255314027E6DA4000E813A1 /* GeneralPrefrencesView.swift in Sources */,
 				B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */,
 				B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */,
 				B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */,
 				B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */,
 				B20CC82F27E66434007A96E3 /* MedoApp.swift in Sources */,
+				B255314827E6E89F00E813A1 /* PrefrencesPowerUserView.swift in Sources */,
 				B255313427E690DA00E813A1 /* View+Extensions.swift in Sources */,
 				B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */,
+				B255314627E6E08600E813A1 /* PrefrencesAboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

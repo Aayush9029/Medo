@@ -7,8 +7,6 @@
 
 import Foundation
 
-struct Constants {}
-
 enum Priority: String {
     case low = "1"
     case medium = "2"

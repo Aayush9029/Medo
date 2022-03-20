@@ -12,6 +12,8 @@ struct MedoApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject private var statusBarController = StatusBarController()
 
+    @AppStorage(AppStorageStrings.app_open_count) var app_open_count = 0
+
     var body: some Scene {
         WindowGroup {
             //            Thanks SwiftUI
@@ -21,11 +23,12 @@ struct MedoApp: App {
             .hidden()
             .onAppear {
                 setupPopupMenu()
+                app_open_count += 1
             }
         }
         Settings {
-            Text("Settings")
-                .frame(width: 300, height: 400)
+            GeneralPrefrencesView()
+                .frame(width: 360, height: 400)
         }
     }
 }
@@ -38,7 +41,7 @@ extension MedoApp {
             .environment(\.managedObjectContext, persistenceController.container.viewContext)
         let popover = NSPopover()
         popover.contentViewController = MainHostingVC(rootView: contentView)
-        popover.contentSize = NSSize(width: 360, height: 520)
+        popover.contentSize = NSSize(width: 360, height: 480)
         statusBarController.start(with: popover)
     }
 }

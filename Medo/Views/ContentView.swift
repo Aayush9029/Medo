@@ -31,10 +31,10 @@ struct ContentView: View {
         }
         .alert(isPresented: $taskViewModel.confrimDelete) {
             Alert(
-                title: Text("Delete all Tasks?"),
-                message: Text("Completely delete all tasks."),
+                title: Text("Remove all Tasks?"),
+                message: Text("This will permanently remove all tasks."),
                 primaryButton: .cancel(),
-                secondaryButton: .destructive(Text("Delete all"), action: deleteAll)
+                secondaryButton: .destructive(Text("Remove all"), action: deleteAll)
             )
         }
     }
@@ -43,12 +43,8 @@ struct ContentView: View {
 extension ContentView {
     private func deleteAll() {
         withAnimation {
-            items.forEach(viewContext.delete)
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            items.forEach { item in
+                taskViewModel.delete(item: item, context: viewContext)
             }
         }
     }

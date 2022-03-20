@@ -9,7 +9,23 @@ import SwiftUI
 
 struct GeneralPrefrencesView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            PrefrencesPowerUserView()
+                .tabItem {
+                    Label("Power User", systemImage: "bolt.fill")
+                        .foregroundStyle(.teal)
+                }
+
+            PrefrencesUsageView()
+                .tabItem {
+                    Label("Usage", systemImage: "chart.line.uptrend.xyaxis")
+                }
+
+            PrefrencesAboutView()
+                .tabItem {
+                    Label("Info", systemImage: "info.circle.fill")
+                }
+        }
     }
 }
 
