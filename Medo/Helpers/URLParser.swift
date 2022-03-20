@@ -47,7 +47,7 @@ class URLParser {
 
     static func get_task(items: [URLQueryItem]) -> TaskModel {
         var title: String = "Untitled"
-        var priority: String = "low"
+        var priority: String = Priority.low.rawValue
 
         if let titleQuery = items.first {
             if titleQuery.name == "title" {
@@ -56,10 +56,11 @@ class URLParser {
         }
         if let priorityQuery = items.last {
             if priorityQuery.name == "p" {
-                priority = priorityQuery.value ?? "low"
+                if Priority(rawValue: priorityQuery.value ?? "1") != nil {
+                    priority = priorityQuery.value ?? "1"
+                }
             }
         }
-
         return TaskModel(title: title, priority: priority)
     }
 

@@ -146,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				B20CC85027E666B2007A96E3 /* TaskViewModel.swift */,
-				B2CF9B2727E777FE00D9C494 /* URLParser.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -163,6 +162,7 @@
 		B20CC84927E664E5007A96E3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B2CF9B2727E777FE00D9C494 /* URLParser.swift */,
 				B20CC83727E66437007A96E3 /* Persistence.swift */,
 				B20CC84B27E66503007A96E3 /* EventMonitor.swift */,
 				B20CC84C27E66503007A96E3 /* StatusBarController.swift */,

@@ -23,7 +23,7 @@ struct TasksListView: View {
                 VStack {
                     VStack {
                         ForEach(tasks) { task in
-                            SingleTaskView(title: task.title ?? "Untitled", priority: Priority(rawValue: task.priority ?? "low") ?? Priority.low, timestamp: task.timestamp ?? Date())
+                            SingleTaskView(title: task.title ?? "Untitled", priority: Priority(rawValue: task.priority ?? "3") ?? Priority.low, timestamp: task.timestamp ?? Date())
                                 .contextMenu {
                                     TaskContextMenu(task: task)
                                 }
