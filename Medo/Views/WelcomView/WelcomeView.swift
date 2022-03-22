@@ -14,7 +14,7 @@ struct WelcomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
-            HStack{
+            HStack {
                 Spacer()
             }
             Text("Welcome to")
@@ -27,11 +27,11 @@ struct WelcomeView: View {
                 .shadow(color: .blue, radius: 25)
             //                .offset( x: isWelcomeShown ? 0 : 200)
                 .blur(radius: isBlurShown ? 0 : 50)
-            
+
             Text("a minimal todo app")
                 .foregroundStyle(.secondary)
                 .offset(x: 0, y: isWelcomeShown ? 0 : 200)
-            
+
             Spacer()
         }
         .onAppear {
@@ -43,7 +43,7 @@ struct WelcomeView: View {
             }
         }
     }
-    
+
 }
 
 struct WelcomeView_Previews: PreviewProvider {

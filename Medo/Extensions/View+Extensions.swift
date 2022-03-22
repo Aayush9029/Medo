@@ -36,7 +36,6 @@ extension View {
     }
 }
 
-
 // MARK: - Floating view
 
 extension View {
@@ -47,7 +46,7 @@ extension View {
             backing: .buffered,
             defer: false
         )
-        
+
         window.makeKey()
         window.isReleasedWhenClosed = false
         window.title = title
@@ -63,7 +62,7 @@ extension View {
         window.setIsVisible(true)
         return window
     }
-    
+
     func openNewWindow(with title: String = "New Window", isTransparent: Bool = false) {
         let window = newWindowInternal(with: title, isTransparent: isTransparent)
         window.contentView = NSHostingView(rootView: self)
@@ -71,7 +70,6 @@ extension View {
         window.makeKeyAndOrderFront(self)
     }
 }
-
 
 class KeyWindow: NSWindow {
     override var canBecomeKey: Bool {

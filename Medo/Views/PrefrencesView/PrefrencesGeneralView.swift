@@ -26,7 +26,7 @@ struct PrefrencesGeneralView: View {
                         Label("Launch at login", systemImage: "laptopcomputer.and.arrow.down")
                             .font(.title3)
                         Spacer()
-                        LaunchAtLogin.Toggle() {
+                        LaunchAtLogin.Toggle {
                             Text("")
                         }
                     }

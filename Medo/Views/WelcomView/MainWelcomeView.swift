@@ -12,7 +12,7 @@ struct MainWelcomeView: View {
     @State private var currentView: Int = -1
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing){
+        ZStack(alignment: .bottomTrailing) {
             Group {
                 switch currentView {
                 case 0:
@@ -37,8 +37,7 @@ struct MainWelcomeView: View {
 
                     .font(.title2.bold())
                     .labelStyle(.iconOnly)
-                    
-                
+
             })
             .circularButton(color: currentView == 2 ? .green : .blue)
             .overlay(

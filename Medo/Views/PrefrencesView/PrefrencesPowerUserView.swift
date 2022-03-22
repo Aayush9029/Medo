@@ -75,7 +75,7 @@ struct PrefrencesPowerUserView: View {
                         }
 
                         Divider()
-                        
+
                         // MARK: Show Tasks
                         Group {
                             SingleUrlSchemeView(title: "Small floating widget", url: "medo://show-small")

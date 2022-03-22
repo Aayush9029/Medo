@@ -12,8 +12,6 @@ struct TaskModel {
     let priority: String
 }
 
-
-
 class URLParser {
 
     static func parse(_ url: String) -> [UrlParseType: TaskModel?]? {
@@ -30,11 +28,11 @@ class URLParser {
                 guard let  query = URLComponents(string: url)?.queryItems else { return nil }
                 return [UrlParseType.addTask: URLParser.get_task(items: query)]
             case .floatSmall:
-                return [UrlParseType.floatSmall : nil]
+                return [UrlParseType.floatSmall: nil]
             case .floatMedium:
-                return [UrlParseType.floatMedium : nil]
+                return [UrlParseType.floatMedium: nil]
             case .floatLarge:
-                return [UrlParseType.floatLarge : nil]
+                return [UrlParseType.floatLarge: nil]
             }
         }
         return nil

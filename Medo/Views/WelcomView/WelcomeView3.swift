@@ -14,7 +14,7 @@ struct WelcomeView3: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
-            HStack{
+            HStack {
                 Spacer()
             }
             Text("Hope you have a")
@@ -24,13 +24,13 @@ struct WelcomeView3: View {
             Text("Productive")
                 .font(.system(size: 48))
                 .foregroundColor(.blue)
-                
+
                 .opacity(isWelcomeShown ? 1 : 0)
-            
+
             Text("Day, Week, Month, Year")
                 .foregroundStyle(.secondary)
                 .offset( x: isWelcomeShown ? 0 : -200, y: 0)
-            
+
             Spacer()
         }
         .background(.ultraThinMaterial)

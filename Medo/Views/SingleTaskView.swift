@@ -54,9 +54,7 @@ struct SingleTaskView: View {
                 priority == .low ? .blue.opacity(0.75) :   priority == .medium ? .orange.opacity(0.75) : .pink.opacity(0.75)
             ]), startPoint: .top, endPoint: .bottom), lineWidth: 1.5)
                 .shadow(color:
-                            priority == .low ? .blue :   priority == .medium ? .orange : .pink, radius: 5
-                        ,x: 0, y: 0)
-
+                            priority == .low ? .blue :   priority == .medium ? .orange : .pink, radius: 5, x: 0, y: 0)
 
         )
     }

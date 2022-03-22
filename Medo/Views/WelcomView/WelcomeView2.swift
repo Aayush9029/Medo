@@ -9,10 +9,10 @@ import SwiftUI
 
 struct WelcomeView2: View {
     @State private var isWelcomeShown: Bool = false
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            
+
             SingleRowWelcomeView(title: "It's a menu bar app", icon: "menubar.arrow.up.rectangle")
 
             HStack {
@@ -46,14 +46,13 @@ struct WelcomeView2: View {
             SingleRowWelcomeView(title: "UI customizations", icon: "sparkles")
 
             SingleRowWelcomeView(title: "Super Snappy UX", icon: "wind.snow")
-            
-            
+
             Spacer()
         }
         .padding()
         .foregroundStyle(.primary)
         .offset(x: isWelcomeShown ? 0 : -500)
-        
+
         .onAppear {
             withAnimation(.easeIn(duration: 0.5)) {
                 isWelcomeShown.toggle()

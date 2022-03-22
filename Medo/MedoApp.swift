@@ -80,44 +80,44 @@ struct MedoApp: App {
                     .keyboardShortcut("1", modifiers: .command)
                 }
             }
-            CommandMenu("Floating Menu"){
+            CommandMenu("Floating Menu") {
                 VStack {
-                    Button("Large Floating View"){
+                    Button("Large Floating View") {
                         showFloatingWindow(height: FloatType.floatLarge.rawValue)
                     }
                     .keyboardShortcut("l", modifiers: .command)
-                    
-                    Button("Medium Floating View"){
+
+                    Button("Medium Floating View") {
                         showFloatingWindow(height: FloatType.floatMedium.rawValue)
                     }
                     .keyboardShortcut("f", modifiers: .command)
-                    
-                    Button("Small Floating View"){
+
+                    Button("Small Floating View") {
                         showFloatingWindow(height: FloatType.floatSmall.rawValue)
                     }
                     .keyboardShortcut("s", modifiers: .command)
                 }
             }
-                
+
         }
         Settings {
             PrefrencesView()
                 .frame(width: 400, height: 400)
         }
     }
-    
-    func showFloatingWindow(height: CGFloat=325){
+
+    func showFloatingWindow(height: CGFloat=325) {
         ScrollView(.vertical, showsIndicators: false) {
             TasksListView(bottomPadding: 8, showEditTask: false)
                 .frame(width: 300, height: height)
                 .background(VisualEffectView(material: .hudWindow, blendingMode: .behindWindow))
                 .cornerRadius(16)
         }
-        
+
         .environment(\.managedObjectContext, taskViewModel.persistenceController.container.viewContext)
         .environmentObject(taskViewModel)
         .openNewWindow(isTransparent: true)
-        
+
     }
 }
 

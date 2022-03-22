@@ -14,8 +14,7 @@ enum UrlParseType: String {
     case floatLarge = "show-large"
 }
 
-
-//MARK: Float sizes
+// MARK: Float sizes
 
 enum FloatType: CGFloat {
     case floatSmall = 140
