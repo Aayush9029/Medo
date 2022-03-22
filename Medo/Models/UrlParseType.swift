@@ -9,9 +9,9 @@ import Foundation
 
 enum UrlParseType: String {
     case addTask = "add-task"
-    case floatSmall = "float-small"
-    case floatMedium = "float-medium"
-    case floatLarge = "float-large"
+    case floatSmall = "show-small"
+    case floatMedium = "show-medium"
+    case floatLarge = "show-large"
 }
 
 

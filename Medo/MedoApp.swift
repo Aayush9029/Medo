@@ -52,7 +52,7 @@ struct MedoApp: App {
             }
         }
         .commands {
-            CommandMenu("Actions") {
+            CommandMenu("Add Task") {
                 VStack {
                     Button("Add Task, priority low") {
                         taskViewModel.priority = Priority.low.rawValue
@@ -71,7 +71,10 @@ struct MedoApp: App {
                         taskViewModel.writeData()
                     }
                     .keyboardShortcut("1", modifiers: .command)
-                    
+                }
+            }
+            CommandMenu("Floating Menu"){
+                VStack {
                     Button("Large Floating View"){
                         showFloatingWindow(height: FloatType.floatLarge.rawValue)
                     }
@@ -80,15 +83,15 @@ struct MedoApp: App {
                     Button("Medium Floating View"){
                         showFloatingWindow(height: FloatType.floatMedium.rawValue)
                     }
-                    .keyboardShortcut("n", modifiers: .command)
+                    .keyboardShortcut("f", modifiers: .command)
                     
                     Button("Small Floating View"){
                         showFloatingWindow(height: FloatType.floatSmall.rawValue)
                     }
                     .keyboardShortcut("s", modifiers: .command)
-
                 }
             }
+                
         }
         Settings {
             PrefrencesView()

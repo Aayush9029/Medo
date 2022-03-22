@@ -74,10 +74,13 @@ struct PrefrencesPowerUserView: View {
                             .cornerRadius(6)
                         }
 
+                        Divider()
+                        
                         // MARK: Show Tasks
                         Group {
-                            SingleUrlSchemeView(title: "Shows the top most tasks in a floating window", url: "medo://show-top")
-                            SingleUrlSchemeView(title: "Shows the top most tasks in a floating window", url: "medo://show-all")
+                            SingleUrlSchemeView(title: "Small floating widget", url: "medo://show-small")
+                            SingleUrlSchemeView(title: "Medium floating widget", url: "medo://show-medium")
+                            SingleUrlSchemeView(title: "Large floating widget", url: "medo://show-large")
                         }
                     }
                     .padding(.bottom)
@@ -88,11 +91,18 @@ struct PrefrencesPowerUserView: View {
                 Group {
                     Text("Keyboard Shortcuts")
                         .font(.title2.bold())
-                    KeyboardShortCutView(title: "Add Task", image1: "command", image2: "return")
-                    KeyboardShortCutView(title: "Add Task, priority low", image1: "command", image2: "1.square")
-                    KeyboardShortCutView(title: "Add Task, priority high", image1: "command", image2: "2.square")
-                    KeyboardShortCutView(title: "Add Task, priority medium", image1: "command", image2: "3.square")
-                    KeyboardShortCutView(title: "Toggle Floating View", image1: "command", image2: "f.square")
+                    Group {
+                        KeyboardShortCutView(title: "Add Task", image1: "command", image2: "return")
+                        KeyboardShortCutView(title: "Add Task, priority low", image1: "command", image2: "1.square")
+                        KeyboardShortCutView(title: "Add Task, priority high", image1: "command", image2: "2.square")
+                        KeyboardShortCutView(title: "Add Task, priority medium", image1: "command", image2: "3.square")
+                    }
+                    Divider()
+                    Group {
+                    KeyboardShortCutView(title: "Small Floating View", image1: "command", image2: "s.square")
+                    KeyboardShortCutView(title: "Medium Floating View", image1: "command", image2: "f.square")
+                    KeyboardShortCutView(title: "Large Floating View", image1: "command", image2: "l.square")
+                    }
                 }
                 Spacer()
             }

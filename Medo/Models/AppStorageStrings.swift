@@ -19,4 +19,8 @@ struct AppStorageStrings {
     static let show_time_stamp = "Show timestamp"
     static let share_usage_data = "Share Usage Data"
 
+//    Keyboard shortcut settings
+    static let smallShortcut = "keyboard.small.float.shortcutKey"
+    static let mediumShortcut = "keyboard.medium.float.shortcutKey"
+    static let largeShortcut = "keyboard.large.float.shortcutKey"
 }
