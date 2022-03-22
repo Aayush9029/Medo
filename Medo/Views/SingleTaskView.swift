@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SingleTaskView: View {
+    @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
+
     let title: String
     let priority: Priority
     let timestamp: Date
@@ -21,10 +23,13 @@ struct SingleTaskView: View {
                         .fontWeight(.medium)
                         .foregroundStyle(.primary)
                 }
-
-                Text(timestamp, formatter: itemFormatter)
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
+                Group {
+                    if show_time_stamp {
+                    Text(timestamp, formatter: itemFormatter)
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
+                    }
+                }
             }
 
             Group {
@@ -41,10 +46,18 @@ struct SingleTaskView: View {
             .foregroundColor(.orange)
         }
         .padding(6)
-        .background(.gray.opacity(0.1))
+        .background(VisualEffectView(material: .fullScreenUI, blendingMode: .behindWindow))
         .overlay(RoundedRectangle(cornerRadius: 4)
-            .stroke(.gray, lineWidth: 1)
-            .shadow(color: .blue, radius: 10, x: 0, y: 0)
+            .stroke(.linearGradient(.init(colors: [
+                .white.opacity(0.25),
+                .white.opacity(0.5),
+                priority == .low ? .blue.opacity(0.75) :   priority == .medium ? .orange.opacity(0.75) : .pink.opacity(0.75)
+            ]), startPoint: .top, endPoint: .bottom), lineWidth: 1.5)
+                .shadow(color:
+                            priority == .low ? .blue :   priority == .medium ? .orange : .pink, radius: 5
+                        ,x: 0, y: 0)
+
+
         )
     }
 }

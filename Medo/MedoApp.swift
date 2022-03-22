@@ -24,6 +24,13 @@ struct MedoApp: App {
             }
             .hidden()
             .onAppear {
+                if app_open_count == 0 {
+                    MainWelcomeView()
+                        .background(.ultraThinMaterial)
+
+                        .cornerRadius(16)
+                        .openNewWindow(with: "Welcome", isTransparent: true)
+                }
                 setupPopupMenu()
                 app_open_count += 1
             }

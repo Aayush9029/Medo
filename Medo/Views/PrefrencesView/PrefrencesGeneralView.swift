@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import LaunchAtLogin
 
 struct PrefrencesGeneralView: View {
     //    App settings
     @AppStorage(AppStorageStrings.launch_at_login) var launch_at_login = true
     @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
-    @AppStorage(AppStorageStrings.share_usage_data) var share_usage_data = true
+    @AppStorage(AppStorageStrings.share_usage_data) var share_usage_data = false
 
 //    @AppStorage(AppStorageStrings.smallShortcut) var small_shortcut = "s"
 //    @AppStorage(AppStorageStrings.mediumShortcut) var medium_shortcut = "f"
@@ -25,7 +26,9 @@ struct PrefrencesGeneralView: View {
                         Label("Launch at login", systemImage: "laptopcomputer.and.arrow.down")
                             .font(.title3)
                         Spacer()
-                        Toggle(isOn: $launch_at_login) {}
+                        LaunchAtLogin.Toggle() {
+                            Text("")
+                        }
                     }
                 } header: {
                     Text("General")

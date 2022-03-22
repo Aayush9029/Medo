@@ -34,6 +34,11 @@
 		B2CF9B2827E777FE00D9C494 /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF9B2727E777FE00D9C494 /* URLParser.swift */; };
 		B2CF9B2A27E7997D00D9C494 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */; };
 		B2FBDBC327EA410400093263 /* UrlParseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBC227EA410400093263 /* UrlParseType.swift */; };
+		B2FBDBCB27EA4FDF00093263 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBCA27EA4FDF00093263 /* WelcomeView.swift */; };
+		B2FBDBCD27EA51C400093263 /* WelcomeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBCC27EA51C400093263 /* WelcomeView2.swift */; };
+		B2FBDBCF27EA526C00093263 /* WelcomeView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBCE27EA526C00093263 /* WelcomeView3.swift */; };
+		B2FBDBD127EA540800093263 /* MainWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBD027EA540800093263 /* MainWelcomeView.swift */; };
+		B2FBDBD427EA5D2500093263 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B2FBDBD327EA5D2500093263 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +72,10 @@
 		B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		B2E50DEA27E775FC001E19D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B2FBDBC227EA410400093263 /* UrlParseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParseType.swift; sourceTree = "<group>"; };
+		B2FBDBCA27EA4FDF00093263 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		B2FBDBCC27EA51C400093263 /* WelcomeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView2.swift; sourceTree = "<group>"; };
+		B2FBDBCE27EA526C00093263 /* WelcomeView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView3.swift; sourceTree = "<group>"; };
+		B2FBDBD027EA540800093263 /* MainWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2FBDBD427EA5D2500093263 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +145,7 @@
 		B20CC84527E664C1007A96E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B2FBDBC927EA4FD400093263 /* WelcomView */,
 				B2FBDBC427EA41BC00093263 /* FloatingView */,
 				B255313E27E6DA1B00E813A1 /* PrefrencesView */,
 				B255313B27E6B27200E813A1 /* SubViews */,
@@ -220,6 +231,17 @@
 			path = FloatingView;
 			sourceTree = "<group>";
 		};
+		B2FBDBC927EA4FD400093263 /* WelcomView */ = {
+			isa = PBXGroup;
+			children = (
+				B2FBDBD027EA540800093263 /* MainWelcomeView.swift */,
+				B2FBDBCA27EA4FDF00093263 /* WelcomeView.swift */,
+				B2FBDBCC27EA51C400093263 /* WelcomeView2.swift */,
+				B2FBDBCE27EA526C00093263 /* WelcomeView3.swift */,
+			);
+			path = WelcomView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,12 +252,16 @@
 				B20CC82727E66434007A96E3 /* Sources */,
 				B20CC82827E66434007A96E3 /* Frameworks */,
 				B20CC82927E66434007A96E3 /* Resources */,
+				B2FBDBC827EA4F0900093263 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Medo;
+			packageProductDependencies = (
+				B2FBDBD327EA5D2500093263 /* LaunchAtLogin */,
+			);
 			productName = Medo;
 			productReference = B20CC82B27E66434007A96E3 /* Medo.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +290,9 @@
 				Base,
 			);
 			mainGroup = B20CC82227E66434007A96E3;
+			packageReferences = (
+				B2FBDBD227EA5D2500093263 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
 			productRefGroup = B20CC82C27E66434007A96E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,6 +314,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B2FBDBC827EA4F0900093263 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B20CC82727E66434007A96E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -297,12 +346,15 @@
 				B2CF9B2827E777FE00D9C494 /* URLParser.swift in Sources */,
 				B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */,
 				B255314227E6DB2000E813A1 /* AppStorageStrings.swift in Sources */,
+				B2FBDBCB27EA4FDF00093263 /* WelcomeView.swift in Sources */,
 				B20CC83127E66434007A96E3 /* ContentView.swift in Sources */,
 				B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */,
 				B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */,
 				B27A85B927E6F30100E3C48D /* PrefrencesGeneralView.swift in Sources */,
 				B255314427E6DBC600E813A1 /* PrefrencesUsageView.swift in Sources */,
+				B2FBDBCD27EA51C400093263 /* WelcomeView2.swift in Sources */,
 				B255313227E6901800E813A1 /* CircularButtonModifier.swift in Sources */,
+				B2FBDBCF27EA526C00093263 /* WelcomeView3.swift in Sources */,
 				B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */,
 				B2CF9B2A27E7997D00D9C494 /* URL+Extensions.swift in Sources */,
 				B255314027E6DA4000E813A1 /* PrefrencesView.swift in Sources */,
@@ -312,6 +364,7 @@
 				B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */,
 				B20CC82F27E66434007A96E3 /* MedoApp.swift in Sources */,
 				B255314827E6E89F00E813A1 /* PrefrencesPowerUserView.swift in Sources */,
+				B2FBDBD127EA540800093263 /* MainWelcomeView.swift in Sources */,
 				B255313427E690DA00E813A1 /* View+Extensions.swift in Sources */,
 				B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */,
 				B255314627E6E08600E813A1 /* PrefrencesAboutView.swift in Sources */,
@@ -371,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -425,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -514,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2FBDBD227EA5D2500093263 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2FBDBD327EA5D2500093263 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2FBDBD227EA5D2500093263 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B20CC83927E66437007A96E3 /* Medo.xcdatamodeld */ = {
