@@ -74,12 +74,6 @@ struct PrefrencesPowerUserView: View {
                             .cornerRadius(6)
                         }
 
-                        // MARK: Delete Tasks
-                        Group {
-                            SingleUrlSchemeView(title: "Delete Task on Top", url: "medo://delete-top")
-                            SingleUrlSchemeView(title: "Delete All Tasks", url: "medo://delete-all")
-                        }
-
                         // MARK: Show Tasks
                         Group {
                             SingleUrlSchemeView(title: "Shows the top most tasks in a floating window", url: "medo://show-top")

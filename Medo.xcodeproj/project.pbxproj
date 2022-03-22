@@ -33,6 +33,7 @@
 		B27A85B927E6F30100E3C48D /* PrefrencesGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27A85B827E6F30100E3C48D /* PrefrencesGeneralView.swift */; };
 		B2CF9B2827E777FE00D9C494 /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF9B2727E777FE00D9C494 /* URLParser.swift */; };
 		B2CF9B2A27E7997D00D9C494 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */; };
+		B2FBDBC327EA410400093263 /* UrlParseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBC227EA410400093263 /* UrlParseType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		B2CF9B2727E777FE00D9C494 /* URLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParser.swift; sourceTree = "<group>"; };
 		B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		B2E50DEA27E775FC001E19D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B2FBDBC227EA410400093263 /* UrlParseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParseType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 		B20CC84527E664C1007A96E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B2FBDBC427EA41BC00093263 /* FloatingView */,
 				B255313E27E6DA1B00E813A1 /* PrefrencesView */,
 				B255313B27E6B27200E813A1 /* SubViews */,
 				B20CC83027E66434007A96E3 /* ContentView.swift */,
@@ -175,6 +178,7 @@
 			children = (
 				B20CC85327E66859007A96E3 /* TaskEnums.swift */,
 				B255314127E6DB2000E813A1 /* AppStorageStrings.swift */,
+				B2FBDBC227EA410400093263 /* UrlParseType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,6 +211,13 @@
 				B255314727E6E89F00E813A1 /* PrefrencesPowerUserView.swift */,
 			);
 			path = PrefrencesView;
+			sourceTree = "<group>";
+		};
+		B2FBDBC427EA41BC00093263 /* FloatingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FloatingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			files = (
 				B255313627E6924300E813A1 /* EmptyTaskView.swift in Sources */,
 				B20CC83827E66437007A96E3 /* Persistence.swift in Sources */,
+				B2FBDBC327EA410400093263 /* UrlParseType.swift in Sources */,
 				B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */,
 				B2CF9B2827E777FE00D9C494 /* URLParser.swift in Sources */,
 				B255313D27E6B2C400E813A1 /* BottomBarView.swift in Sources */,

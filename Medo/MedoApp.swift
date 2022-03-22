@@ -41,21 +41,12 @@ struct MedoApp: App {
                             taskViewModel.priority = task.priority
                             taskViewModel.writeData()
                         }
-                    case .deleteTop:
-                        print("Deleting")
-                        if let topTask = taskViewModel.tasks.first {
-                            taskViewModel.delete(item: topTask)
-                        }
-                    case .deleteAll:
-                        taskViewModel.tasks.forEach { task in
-                            taskViewModel.delete(item: task)
-                        }
-                    case .showTop:
-                        if let topTask = taskViewModel.tasks.first {
-                            print(topTask)
-                        }
-                    case .showAll:
-                        print(taskViewModel.tasks)
+                    case .floatSmall:
+                        showFloatingWindow(height: FloatType.floatSmall.rawValue)
+                    case .floatMedium:
+                        showFloatingWindow(height: FloatType.floatMedium.rawValue)
+                    case .floatLarge:
+                        showFloatingWindow(height: FloatType.floatLarge.rawValue)
                     }
                 }
             }
@@ -80,6 +71,21 @@ struct MedoApp: App {
                         taskViewModel.writeData()
                     }
                     .keyboardShortcut("1", modifiers: .command)
+                    
+                    Button("Large Floating View"){
+                        showFloatingWindow(height: FloatType.floatLarge.rawValue)
+                    }
+                    .keyboardShortcut("l", modifiers: .command)
+                    
+                    Button("Medium Floating View"){
+                        showFloatingWindow(height: FloatType.floatMedium.rawValue)
+                    }
+                    .keyboardShortcut("n", modifiers: .command)
+                    
+                    Button("Small Floating View"){
+                        showFloatingWindow(height: FloatType.floatSmall.rawValue)
+                    }
+                    .keyboardShortcut("s", modifiers: .command)
 
                 }
             }
@@ -88,6 +94,20 @@ struct MedoApp: App {
             PrefrencesView()
                 .frame(width: 400, height: 400)
         }
+    }
+    
+    func showFloatingWindow(height: CGFloat=325){
+        ScrollView(.vertical, showsIndicators: false) {
+            TasksListView(bottomPadding: 8, showEditTask: false)
+                .frame(width: 300, height: height)
+                .background(VisualEffectView(material: .hudWindow, blendingMode: .behindWindow))
+                .cornerRadius(16)
+        }
+        
+        .environment(\.managedObjectContext, taskViewModel.persistenceController.container.viewContext)
+        .environmentObject(taskViewModel)
+        .openNewWindow(isTransparent: true)
+        
     }
 }
 

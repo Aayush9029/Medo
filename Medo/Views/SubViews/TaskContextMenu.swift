@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct TaskContextMenu: View {
+    var showEditTask: Bool  = true
     @EnvironmentObject var taskViewModel: TaskViewModel
 
     let task: Task
 
     var body: some View {
         VStack {
-            Button {
-                taskViewModel.selectItem(item: task)
-            } label: {
-                Label("Edit Task", systemImage: "pencil")
+            Group {
+                if showEditTask {
+                    Button {
+                        taskViewModel.selectItem(item: task)
+                    } label: {
+                        Label("Edit Task", systemImage: "pencil")
+                    }
+                }
             }
             Button {
                 taskViewModel.delete(item: task)

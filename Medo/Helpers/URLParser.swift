@@ -12,13 +12,7 @@ struct TaskModel {
     let priority: String
 }
 
-enum UrlParseType: String {
-    case addTask = "add-task"
-    case deleteTop = "delete-top"
-    case deleteAll = "delete-all"
-    case showTop = "show-top"
-    case showAll = "show-all"
-}
+
 
 class URLParser {
 
@@ -35,14 +29,12 @@ class URLParser {
             case .addTask:
                 guard let  query = URLComponents(string: url)?.queryItems else { return nil }
                 return [UrlParseType.addTask: URLParser.get_task(items: query)]
-            case .deleteTop:
-                return [UrlParseType.deleteTop: nil]
-            case .deleteAll:
-                return [UrlParseType.deleteAll: nil]
-            case .showTop:
-                return [UrlParseType.showTop: nil]
-            case .showAll:
-                return [UrlParseType.showAll: nil]
+            case .floatSmall:
+                return [UrlParseType.floatSmall : nil]
+            case .floatMedium:
+                return [UrlParseType.floatMedium : nil]
+            case .floatLarge:
+                return [UrlParseType.floatLarge : nil]
             }
         }
         return nil

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TasksListView: View {
+    var bottomPadding: CGFloat = 45
+    var showEditTask: Bool = true
+
     @EnvironmentObject var taskViewModel: TaskViewModel
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -26,13 +29,13 @@ struct TasksListView: View {
                         ForEach(tasks) { task in
                             SingleTaskView(title: task.title ?? "Untitled", priority: Priority(rawValue: task.priority ?? "3") ?? Priority.low, timestamp: task.timestamp ?? Date())
                                 .contextMenu {
-                                    TaskContextMenu(task: task)
+                                    TaskContextMenu(showEditTask: showEditTask, task: task)
                                 }
                         }
                     }
                 }
                 .padding()
-                .padding(.bottom, 45)
+                .padding(.bottom, bottomPadding)
             }
         }
     }
