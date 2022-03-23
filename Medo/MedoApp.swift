@@ -34,13 +34,9 @@ struct MedoApp: App {
                 setupPopupMenu()
                 app_open_count += 1
             }
-
             .onOpenURL { url in
                 guard url.isDeeplink else { return }
-                print(url)
                 if let parsed = URLParser.parse(url.absoluteString)?.first {
-                    print(parsed)
-
                     switch parsed.key {
                     case .addTask:
                         if let task = parsed.value {
@@ -105,6 +101,20 @@ struct MedoApp: App {
                 .frame(width: 400, height: 400)
         }
     }
+}
+
+// MARK: - Setting up PopUpMenu and showingFloatingWindow
+
+extension MedoApp {
+    private func setupPopupMenu() {
+        let contentView = ContentView()
+            .environment(\.managedObjectContext, taskViewModel.persistenceController.container.viewContext)
+            .environmentObject(taskViewModel)
+        let popover = NSPopover()
+        popover.contentViewController = MainHostingVC(rootView: contentView)
+        popover.contentSize = NSSize(width: 360, height: 480)
+        statusBarController.start(with: popover)
+    }
 
     func showFloatingWindow(height: CGFloat=325) {
         ScrollView(.vertical, showsIndicators: false) {
@@ -118,19 +128,5 @@ struct MedoApp: App {
         .environmentObject(taskViewModel)
         .openNewWindow(isTransparent: true)
 
-    }
-}
-
-// MARK: - Setting up PopUp Menu
-
-extension MedoApp {
-    private func setupPopupMenu() {
-        let contentView = ContentView()
-            .environment(\.managedObjectContext, taskViewModel.persistenceController.container.viewContext)
-            .environmentObject(taskViewModel)
-        let popover = NSPopover()
-        popover.contentViewController = MainHostingVC(rootView: contentView)
-        popover.contentSize = NSSize(width: 360, height: 480)
-        statusBarController.start(with: popover)
     }
 }

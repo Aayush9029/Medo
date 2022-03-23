@@ -16,7 +16,7 @@ struct MainWelcomeView: View {
             Group {
                 switch currentView {
                 case 0:
-                    WelcomeView()
+                    WelcomeView1()
                 case 1:
                     WelcomeView2()
                 case 2:

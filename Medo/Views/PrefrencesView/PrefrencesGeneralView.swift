@@ -9,6 +9,8 @@ import SwiftUI
 import LaunchAtLogin
 
 struct PrefrencesGeneralView: View {
+    @EnvironmentObject var updatesViewModel: VersionCheckViewModel
+
     @AppStorage(AppStorageStrings.launch_at_login) var launch_at_login = true
     @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
 
@@ -37,9 +39,18 @@ struct PrefrencesGeneralView: View {
                 } header: {
                     Text("UI / UX")
                 }
+                Section {
+                    VersionInfoView()
+                        .environmentObject(updatesViewModel)
+                }header: {
+                    Text("Updates")
+                }
             }
                 .toggleStyle(.switch)
                 .padding()
+        }
+        .task {
+            await updatesViewModel.checkForUpdates()
         }
     }
 }

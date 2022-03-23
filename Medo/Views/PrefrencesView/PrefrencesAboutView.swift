@@ -12,6 +12,7 @@ struct PrefrencesAboutView: View {
     var body: some View {
         VStack {
             Spacer()
+
             Image("thopda")
                 .resizable()
                 .profileImage()
@@ -21,6 +22,7 @@ struct PrefrencesAboutView: View {
                 .padding(.top)
 
             Spacer()
+
             VStack {
                 CleanLinkView(
                     image: Image("github"),

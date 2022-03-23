@@ -1,5 +1,5 @@
 //
-//  WelcomeView.swift
+//  WelcomeView1.swift
 //  Medo
 //
 //  Created by Aayush Pokharel on 2022-03-22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct WelcomeView1: View {
     @State private var isWelcomeShown: Bool = false
     @State private var isBlurShown: Bool = false
 
@@ -43,12 +43,11 @@ struct WelcomeView: View {
             }
         }
     }
-
 }
 
-struct WelcomeView_Previews: PreviewProvider {
+struct WelcomeView1_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WelcomeView1()
             .frame(width: 300, height: 400)
     }
 }

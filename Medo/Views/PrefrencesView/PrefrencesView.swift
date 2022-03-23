@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct PrefrencesView: View {
+    @StateObject var updatesViewModel = VersionCheckViewModel()
     var body: some View {
         TabView {
             PrefrencesGeneralView()
+                .environmentObject(updatesViewModel)
                 .tabItem {
                 Label("General", systemImage: "gear")
                 }
