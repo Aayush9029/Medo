@@ -9,18 +9,12 @@ import Foundation
 
 struct AppStorageStrings {
 //    For fun graphs on the usage tab
-    static let usage_add = "TasksAddedCount"
-    static let usage_delete = "TasksDeletedCount"
-    static let usage_edit = "TasksEditedCount"
-    static let app_open_count = "AppOpenCount"
+    static let usage_add = "com.aayush.opensource.medo.taskaddcount"
+    static let usage_delete = "com.aayush.opensource.medo.taskdeletecount"
+    static let usage_edit = "com.aayush.opensource.medo.taskeditcount"
+    static let app_open_count = "com.aayush.opensource.medo.appopencount"
 
 //    App settings
-    static let launch_at_login = "Launch at login"
-    static let show_time_stamp = "Show timestamp"
-    static let share_usage_data = "Share Usage Data"
-
-//    Keyboard shortcut settings
-    static let smallShortcut = "keyboard.small.float.shortcutKey"
-    static let mediumShortcut = "keyboard.medium.float.shortcutKey"
-    static let largeShortcut = "keyboard.large.float.shortcutKey"
+    static let launch_at_login = "com.aayush.opensource.medo.launchatlogin"
+    static let show_time_stamp = "com.aayush.opensource.medo.showtimestamp"
 }

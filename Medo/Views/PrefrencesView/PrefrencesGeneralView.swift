@@ -9,14 +9,8 @@ import SwiftUI
 import LaunchAtLogin
 
 struct PrefrencesGeneralView: View {
-    //    App settings
     @AppStorage(AppStorageStrings.launch_at_login) var launch_at_login = true
     @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
-    @AppStorage(AppStorageStrings.share_usage_data) var share_usage_data = false
-
-//    @AppStorage(AppStorageStrings.smallShortcut) var small_shortcut = "s"
-//    @AppStorage(AppStorageStrings.mediumShortcut) var medium_shortcut = "f"
-//    @AppStorage(AppStorageStrings.largeShortcut) var large_shortcut = "l"
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,20 +37,7 @@ struct PrefrencesGeneralView: View {
                 } header: {
                     Text("UI / UX")
                 }
-                Section {
-                    VStack {
-                        HStack {
-                            Label("Share Crash logs", systemImage: "text.quote")
-                                .font(.title3)
-                            Spacer()
-                            Toggle(isOn: $share_usage_data) {}
-                        }
-                    }
-                } header: {
-                    Text("Help Improve the app")
-                }
             }
-
                 .toggleStyle(.switch)
                 .padding()
         }

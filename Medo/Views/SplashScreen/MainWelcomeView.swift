@@ -9,7 +9,7 @@ import SwiftUI
 import Cocoa
 
 struct MainWelcomeView: View {
-    @State private var currentView: Int = -1
+    @State private var currentView: Int = 0
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -23,6 +23,7 @@ struct MainWelcomeView: View {
                     WelcomeView3()
                 default:
                     EmptyView()
+//                    Something's wrong i can feel it
                 }
             }
 
@@ -34,8 +35,7 @@ struct MainWelcomeView: View {
                 }
             }, label: {
                 Label("Next", systemImage: currentView == 2 ? "checkmark" : "arrow.right")
-
-                    .font(.title2.bold())
+                    .boldText()
                     .labelStyle(.iconOnly)
 
             })
@@ -47,9 +47,6 @@ struct MainWelcomeView: View {
             .padding()
 
         } .frame(width: 300, height: 400)
-            .onAppear {
-                currentView += 1
-            }
     }
 }
 

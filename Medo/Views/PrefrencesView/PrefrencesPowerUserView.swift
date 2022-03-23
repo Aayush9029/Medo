@@ -49,7 +49,7 @@ struct PrefrencesPowerUserView: View {
             VStack(alignment: .leading) {
                 Group {
                     Text("URL Schemes")
-                        .font(.title2.bold())
+                        .boldText()
                         .padding(.bottom, 5)
 
                     VStack(alignment: .leading) {
@@ -90,7 +90,7 @@ struct PrefrencesPowerUserView: View {
 
                 Group {
                     Text("Keyboard Shortcuts")
-                        .font(.title2.bold())
+                        .boldText()
                     Group {
                         KeyboardShortCutView(title: "Add Task", image1: "command", image2: "return")
                         KeyboardShortCutView(title: "Add Task, priority low", image1: "command", image2: "1.square")
