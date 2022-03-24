@@ -9,11 +9,8 @@
 
 
 
-# [Medo]()
+# [Medo](https://aayush9029.github.io/Medo/)
 
-
-    
-    
     
 # Some neat implmentations 
 - Complete SwiftUI lifecycle (including menu bar view)
