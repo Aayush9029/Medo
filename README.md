@@ -1,8 +1,15 @@
-# [Medo]()
 <div align='center'>
-
+  
   ![banner](https://user-images.githubusercontent.com/43297314/159801155-9dc521df-07bc-42d1-85ea-643a66aaace5.png)
+  
+  <img src="https://user-images.githubusercontent.com/43297314/159814508-103f4678-49f0-4160-999a-fb10e18c0ca9.png" height="500px"> <img src="https://user-images.githubusercontent.com/43297314/159814717-30900c01-ddbd-4a0c-bda1-6e4077c11d95.png" height="500px">
+
 </div>
+
+
+
+
+# [Medo]()
 
 
     
