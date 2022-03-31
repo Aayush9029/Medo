@@ -12,7 +12,7 @@
 # [Medo](https://aayush9029.github.io/Medo/)
 
     
-# Some neat implmentations 
+# Some neat implementations 
 - Complete SwiftUI lifecycle (including menu bar view)
 - Core Data + \*ViewModel follows **MVVM** pattern
 - Custom Splash Screen (on first app launch)
