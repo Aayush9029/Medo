@@ -1,0 +1,784 @@
+/*-----------------------------------------------------------------------------------
+	Medo
+	About: A shiny new Blocs website.
+	Author: Aayush Pokharel
+	Version: 1.0
+	Built with Blocs
+-----------------------------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, #000000 0%, #02000F 100%);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page-container {
+    overflow: hidden;
+}
+
+
+/* Prevents unwanted scroll space when scroll FX used. */
+
+a,
+button {
+    transition: background .3s ease-in-out;
+    outline: none!important;
+}
+
+
+/* Prevent blue selection glow on Chrome and Safari */
+
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Preloader */
+
+.page-preloader {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 100000;
+    background: #FFFFFF url("img/pageload-spinner.gif") no-repeat center center;
+    animation-name: preloader-fade;
+    animation-delay: 2s;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.preloader-complete {
+    animation-delay: 0.1s;
+}
+
+@keyframes preloader-fade {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* = Blocs
+-------------------------------------------------------------- */
+
+.bloc {
+    width: 100%;
+    clear: both;
+    background: 50% 50% no-repeat;
+    padding: 0 20px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    display: flex;
+}
+
+.bloc .container {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+
+
+/* Sizes */
+
+.bloc-lg {
+    padding: 100px 20px;
+}
+
+
+/* = Full Screen Blocs 
+-------------------------------------------------------------- */
+
+.bloc-fill-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bloc-fill-screen>.container {
+    align-self: flex-middle;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bloc-fill-screen>.container>.row {
+    flex-grow: 1;
+    align-self: center;
+    width: 100%;
+}
+
+.bloc-fill-screen .fill-bloc-top-edge,
+.bloc-fill-screen .fill-bloc-bottom-edge {
+    flex-grow: 0;
+}
+
+.bloc-fill-screen .fill-bloc-top-edge {
+    align-self: flex-start;
+}
+
+.bloc-fill-screen .fill-bloc-bottom-edge {
+    align-self: flex-end;
+}
+
+
+/* Dark theme */
+
+.d-bloc {
+    color: rgba(255, 255, 255, .7);
+}
+
+.d-bloc button:hover {
+    color: rgba(255, 255, 255, .9);
+}
+
+.d-bloc .icon-round,
+.d-bloc .icon-square,
+.d-bloc .icon-rounded,
+.d-bloc .icon-semi-rounded-a,
+.d-bloc .icon-semi-rounded-b {
+    border-color: rgba(255, 255, 255, .9);
+}
+
+.d-bloc .divider-h span {
+    border-color: rgba(255, 255, 255, .2);
+}
+
+.d-bloc .a-btn,
+.d-bloc .navbar a,
+.d-bloc a .icon-sm,
+.d-bloc a .icon-md,
+.d-bloc a .icon-lg,
+.d-bloc a .icon-xl,
+.d-bloc h1 a,
+.d-bloc h2 a,
+.d-bloc h3 a,
+.d-bloc h4 a,
+.d-bloc h5 a,
+.d-bloc h6 a,
+.d-bloc p a {
+    color: rgba(255, 255, 255, .6);
+}
+
+.d-bloc .a-btn:hover,
+.d-bloc .navbar a:hover,
+.d-bloc a:hover .icon-sm,
+.d-bloc a:hover .icon-md,
+.d-bloc a:hover .icon-lg,
+.d-bloc a:hover .icon-xl,
+.d-bloc h1 a:hover,
+.d-bloc h2 a:hover,
+.d-bloc h3 a:hover,
+.d-bloc h4 a:hover,
+.d-bloc h5 a:hover,
+.d-bloc h6 a:hover,
+.d-bloc p a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.d-bloc .navbar-toggle .icon-bar {
+    background: rgba(255, 255, 255, 1);
+}
+
+.d-bloc .btn-wire,
+.d-bloc .btn-wire:hover {
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.d-bloc .card {
+    color: rgba(0, 0, 0, .5);
+}
+
+.d-bloc .card button:hover {
+    color: rgba(0, 0, 0, .7);
+}
+
+.d-bloc .card icon {
+    border-color: rgba(0, 0, 0, .7);
+}
+
+.d-bloc .card .divider-h span {
+    border-color: rgba(0, 0, 0, .1);
+}
+
+.d-bloc .card .a-btn {
+    color: rgba(0, 0, 0, .6);
+}
+
+.d-bloc .card .a-btn:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.d-bloc .card .btn-wire,
+.d-bloc .card .btn-wire:hover {
+    color: rgba(0, 0, 0, .7);
+    border-color: rgba(0, 0, 0, .3);
+}
+
+
+/* Light theme */
+
+.d-bloc .card,
+.l-bloc {
+    color: rgba(0, 0, 0, .5);
+}
+
+.d-bloc .card button:hover,
+.l-bloc button:hover {
+    color: rgba(0, 0, 0, .7);
+}
+
+.l-bloc .icon-round,
+.l-bloc .icon-square,
+.l-bloc .icon-rounded,
+.l-bloc .icon-semi-rounded-a,
+.l-bloc .icon-semi-rounded-b {
+    border-color: rgba(0, 0, 0, .7);
+}
+
+.d-bloc .card .divider-h span,
+.l-bloc .divider-h span {
+    border-color: rgba(0, 0, 0, .1);
+}
+
+.d-bloc .card .a-btn,
+.l-bloc .a-btn,
+.l-bloc .navbar a,
+.l-bloc a .icon-sm,
+.l-bloc a .icon-md,
+.l-bloc a .icon-lg,
+.l-bloc a .icon-xl,
+.l-bloc h1 a,
+.l-bloc h2 a,
+.l-bloc h3 a,
+.l-bloc h4 a,
+.l-bloc h5 a,
+.l-bloc h6 a,
+.l-bloc p a {
+    color: rgba(0, 0, 0, .6);
+}
+
+.d-bloc .card .a-btn:hover,
+.l-bloc .a-btn:hover,
+.l-bloc .navbar a:hover,
+.l-bloc a:hover .icon-sm,
+.l-bloc a:hover .icon-md,
+.l-bloc a:hover .icon-lg,
+.l-bloc a:hover .icon-xl,
+.l-bloc h1 a:hover,
+.l-bloc h2 a:hover,
+.l-bloc h3 a:hover,
+.l-bloc h4 a:hover,
+.l-bloc h5 a:hover,
+.l-bloc h6 a:hover,
+.l-bloc p a:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.l-bloc .navbar-toggle .icon-bar {
+    color: rgba(0, 0, 0, .6);
+}
+
+.d-bloc .card .btn-wire,
+.d-bloc .card .btn-wire:hover,
+.l-bloc .btn-wire,
+.l-bloc .btn-wire:hover {
+    color: rgba(0, 0, 0, .7);
+    border-color: rgba(0, 0, 0, .3);
+}
+
+
+/* = NavBar
+-------------------------------------------------------------- */
+
+
+/* Handle Multi Level Navigation */
+
+.dropdown-menu .dropdown-menu {
+    border: none
+}
+
+@media (min-width:576px) {
+    .navbar-expand-sm .dropdown-menu .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        position: absolute;
+        left: 100%;
+        top: -7px
+    }
+    .navbar-expand-sm .dropdown-menu .submenu-left {
+        right: 100%;
+        left: auto
+    }
+}
+
+@media (min-width:768px) {
+    .navbar-expand-md .dropdown-menu .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        border: 1px solid rgba(0, 0, 0, .15);
+        position: absolute;
+        left: 100%;
+        top: -7px
+    }
+    .navbar-expand-md .dropdown-menu .submenu-left {
+        right: 100%;
+        left: auto
+    }
+}
+
+@media (min-width:992px) {
+    .navbar-expand-lg .dropdown-menu .dropdown-menu {
+        border: 1px solid rgba(0, 0, 0, .15);
+        position: absolute;
+        left: 100%;
+        top: -7px
+    }
+    .navbar-expand-lg .dropdown-menu .submenu-left {
+        right: 100%;
+        left: auto
+    }
+}
+
+
+/* = Bric adjustment margins
+-------------------------------------------------------------- */
+
+.mg-md {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+img.mg-sm,
+img.mg-md,
+img.mg-lg {
+    margin-top: 0;
+}
+
+img.mg-sm {
+    margin-bottom: 10px;
+}
+
+img.mg-md {
+    margin-bottom: 30px;
+}
+
+img.mg-lg {
+    margin-bottom: 50px;
+}
+
+
+/* = Buttons
+-------------------------------------------------------------- */
+
+.btn-d,
+.btn-d:hover,
+.btn-d:focus {
+    color: #FFF;
+    background: rgba(0, 0, 0, .3);
+}
+
+
+/* Prevent ugly blue glow on chrome and safari */
+
+button {
+    outline: none!important;
+}
+
+.btn-clean {
+    border: 1px solid rgba(0, 0, 0, .08);
+    border-bottom-color: rgba(0, 0, 0, .1);
+    text-shadow: 0 1px 0 rgba(0, 0, 1, .1);
+    box-shadow: 0 1px 3px rgba(0, 0, 1, .25), inset 0 1px 0 0 rgba(255, 255, 255, .15);
+}
+
+.btn-wire {
+    background: transparent!important;
+    border: 2px solid transparent;
+}
+
+.btn-wire:hover {
+    background: transparent!important;
+    border: 2px solid transparent;
+}
+
+.a-block {
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+}
+
+.text-center .a-block {
+    text-align: center;
+}
+
+
+/* = Masonary
+-------------------------------------------------------------- */
+
+.card-columns .card {
+    margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: 1.25rem;
+        -moz-column-gap: 1.25rem;
+        column-gap: 1.25rem;
+        orphans: 1;
+        widows: 1;
+    }
+    .card-columns .card {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+
+/* ScrollToTop button */
+
+.scrollToTop {
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    z-index: 999;
+    transition: all .3s ease-in-out;
+    pointer-events: none;
+}
+
+.showScrollTop {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.scroll-to-top-btn-icon {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+    fill-rule: evenodd;
+    stroke-linecap: round;
+}
+
+
+/* = Custom Styling
+-------------------------------------------------------------- */
+
+.btn-wire,
+.btn-clean {
+    padding: 10px 20px;
+    color: #8B74FD !important;
+    ;
+    border: 2px solid #8B74FD !important;
+}
+
+.btn-wire:hover,
+.btn-clean:hover {
+    padding: 10px 20px;
+    color: white !important;
+    background-color: #8B74FD !important;
+    ;
+    border: 2px solid #8B74FD !important;
+}
+
+h1,
+h2,
+h4 {
+    background: linear-gradient(90deg, #8B74FD 0%, #4200ad 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 1000;
+}
+
+h5 {
+    background: linear-gradient(90deg, #e2dcff 0%, #8B74FD 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 1000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+.btn,
+a {
+    font-family: "Helvetica";
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1140px;
+}
+
+.feat-header {
+    font-weight: bold;
+}
+
+.app-hero-img {
+    box-shadow: -6px -36px 32px rgba(0, 0, 0, 0.09);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.app-hero-title {
+    font-size: 60px;
+}
+
+.app-hero-sub-title {
+    font-size: 30px;
+}
+
+.purple-gradient-bg-vert {
+    background: linear-gradient(0deg, #9809FF 0%, #8B74FD 100%);
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.app-offset-bottom {
+    position: relative;
+    bottom: -20px;
+}
+
+.img-medo-pref-style {
+    height: 360px;
+    border-radius: 11px 11px 11px 11px;
+    box-shadow: -3px -6px 32px rgba(102, 6, 255, 0.719);
+    border: 2px solid #8B74FD;
+}
+
+.img-4-style {
+    height: 360px;
+}
+
+.img-ener-style {
+    height: 120px;
+    border-radius: 12px 12px 12px 12px;
+    box-shadow: -3px -6px 32px rgba(102, 6, 255, 0.719);
+    border: 2px solid #8B74FD;
+}
+
+.img-8-style {
+    height: 120px;
+}
+
+.img-medo-float-style {
+    border-radius: 11px 11px 11px 11px;
+    box-shadow: 0px 5px 20px rgb(142, 72, 255), 0px 25px 52px rgba(102, 6, 255, 0.5);
+    border: 2px solid #8B74FD;
+    transition: 0.3s ease-in-out;
+}
+
+.img-medo-float-style:hover {
+    border-radius: 11px 11px 11px 11px;
+    box-shadow: 0px 0px 5px rgb(142, 72, 255), 0px 2px 5px rgba(102, 6, 255, 0.5);
+}
+
+.team-card {
+    min-height: 350px;
+}
+
+.card-body-style {
+    height: 350px;
+}
+
+
+/* = Colour
+-------------------------------------------------------------- */
+
+
+/* Background colour styles */
+
+.bgc-black {
+    background-color: #000000;
+}
+
+
+/* Bloc image backgrounds */
+
+
+/* = Bloc Padding Multi Breakpoint
+-------------------------------------------------------------- */
+
+@media (min-width: 576px) {
+    .bloc-xxl-sm {
+        padding: 200px 20px;
+    }
+    .bloc-xl-sm {
+        padding: 150px 20px;
+    }
+    .bloc-lg-sm {
+        padding: 100px 20px;
+    }
+    .bloc-md-sm {
+        padding: 50px 20px;
+    }
+    .bloc-sm-sm {
+        padding: 20px;
+    }
+    .bloc-no-padding-sm {
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .bloc-xxl-md {
+        padding: 200px 20px;
+    }
+    .bloc-xl-md {
+        padding: 150px 20px;
+    }
+    .bloc-lg-md {
+        padding: 100px 20px;
+    }
+    .bloc-md-md {
+        padding: 50px 20px;
+    }
+    .bloc-sm-md {
+        padding: 20px 20px;
+    }
+    .bloc-no-padding-md {
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .bloc-xxl-lg {
+        padding: 200px 20px;
+    }
+    .bloc-xl-lg {
+        padding: 150px 20px;
+    }
+    .bloc-lg-lg {
+        padding: 100px 20px;
+    }
+    .bloc-md-lg {
+        padding: 50px 20px;
+    }
+    .bloc-sm-lg {
+        padding: 20px;
+    }
+    .bloc-no-padding-lg {
+        padding: 0 20px;
+    }
+}
+
+
+/* = Mobile adjustments 
+-------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .bloc.full-width-bloc,
+    .bloc-tile-2.full-width-bloc .container,
+    .bloc-tile-3.full-width-bloc .container,
+    .bloc-tile-4.full-width-bloc .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        width: 100%;
+    }
+    .bloc {
+        padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right);
+    }
+    /* iPhone X Notch Support*/
+    .bloc-group,
+    .bloc-group .bloc {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .bloc-tile-2 .container,
+    .bloc-tile-3 .container,
+    .bloc-tile-4 .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .btn-dwn {
+        display: none;
+    }
+    .voffset {
+        margin-top: 5px;
+    }
+    .voffset-md {
+        margin-top: 20px;
+    }
+    .voffset-lg {
+        margin-top: 30px;
+    }
+    form {
+        padding: 5px;
+    }
+    .close-lightbox {
+        display: inline-block;
+    }
+    .blocsapp-device-iphone5 {
+        background-size: 216px 425px;
+        padding-top: 60px;
+        width: 216px;
+        height: 425px;
+    }
+    .blocsapp-device-iphone5 img {
+        width: 180px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 991px) {
+    .app-hero-title {
+        font-size: 50px;
+    }
+    .app-hero-sub-title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .app-hero-title {
+        font-size: 40px;
+    }
+    .app-hero-sub-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .app-hero-title {
+        font-size: 20px;
+    }
+    .footer-link {
+        text-align: center;
+    }
+}
