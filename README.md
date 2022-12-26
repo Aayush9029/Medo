@@ -27,6 +27,4 @@
 - Raycast Extensions
 
 
-Note: *Looking at the codebase at 2022-11-23* (after 7 months): This doesn't feel polished / organized at all.
-
-**Will work on, perhaps re-write the app for macOS Ventura.**
+Note: *Looking at the codebase at 2022-11-23* (after 7 months): This doesn't feel as polished*
