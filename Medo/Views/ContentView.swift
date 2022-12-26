@@ -29,7 +29,7 @@ struct ContentView: View {
         }
         .alert(isPresented: $taskViewModel.confrimDelete) {
             Alert(
-                title: Text("Remove all Tasks?"),
+                title: Text("Remove all tasks?"),
                 message: Text("This will permanently remove all tasks."),
                 primaryButton: .cancel(),
                 secondaryButton: .destructive(Text("Remove all"), action: deleteAll)
