@@ -21,7 +21,6 @@
 - Custom URL Scheme handling
 - New Async Await api (to check for latest app version and build)
 - [LaunchAtLogin](https://github.com/sindresorhus/LaunchAtLogin)
-- Custom Splash Animations using `.onAppear` modifier
 - Native Prefrences tab using `Settings {}`
 - Local Keyboard shortcuts using `CommandMenu{}`
 - Raycast Extensions
