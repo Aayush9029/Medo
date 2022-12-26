@@ -12,7 +12,6 @@ struct TasksListView: View {
     var showEditTask: Bool = true
 
     @EnvironmentObject var taskViewModel: TaskViewModel
-    @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Task.priority, ascending: true)],
@@ -27,10 +26,14 @@ struct TasksListView: View {
                 VStack {
                     VStack {
                         ForEach(tasks) { task in
-                            SingleTaskView(title: task.title ?? "Untitled", priority: Priority(rawValue: task.priority ?? "3") ?? Priority.low, timestamp: task.timestamp ?? Date())
-                                .contextMenu {
-                                    TaskContextMenu(showEditTask: showEditTask, task: task)
-                                }
+                            SingleTaskView(
+                                title: task.title ?? "Untitled",
+                                priority: Priority(rawValue: task.priority ?? "3") ?? Priority.low,
+                                timestamp: task.timestamp ?? Date()
+                            )
+                            .contextMenu {
+                                TaskContextMenu(showEditTask: showEditTask, task: task)
+                            }
                         }
                     }
                 }

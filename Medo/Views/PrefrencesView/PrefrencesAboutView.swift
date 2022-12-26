@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PrefrencesAboutView: View {
-    @State var isHovered: Bool = false
     var body: some View {
         VStack {
             Spacer()

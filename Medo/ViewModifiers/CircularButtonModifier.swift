@@ -20,9 +20,9 @@ struct CircularButtonModifier: ViewModifier {
             .padding(8)
             .background(color.opacity(hovering ? 0.5 : 0.1))
             .clipShape(Circle())
-            .onHover { new_value in
+            .onHover { value in
                 withAnimation {
-                    hovering = new_value
+                    hovering = value
                 }
             }
     }

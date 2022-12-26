@@ -17,9 +17,13 @@ class KeyWindow: NSWindow {
 
 extension KeyWindow {
     override func keyDown(with event: NSEvent) {
-        if event.modifierFlags.intersection(.deviceIndependentFlagsMask) == .command && event.charactersIgnoringModifiers == "w" {
-            close()
-            return
+        if event.modifierFlags.intersection(
+            .deviceIndependentFlagsMask
+        ) == .command {
+            if event.charactersIgnoringModifiers == "w" {
+                close()
+                return
+            }
         } else {
             super.keyDown(with: event)
         }

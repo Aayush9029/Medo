@@ -1,5 +1,5 @@
 //
-//  CircularSpinnyImageModifier.swift
+//  SpinnyImageModifier.swift
 //  Medo
 //
 //  Created by Aayush Pokharel on 2022-03-23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircularSpinnyImageModifier: ViewModifier {
+struct SpinnyImageModifier: ViewModifier {
     @State var isHovered: Bool = false
 
     func body(content: Content) -> some View {
@@ -30,6 +30,5 @@ struct CircularSpinnyImageModifier: ViewModifier {
                     isHovered = val
                 }
             }
-
     }
 }

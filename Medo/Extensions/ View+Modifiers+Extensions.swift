@@ -5,8 +5,8 @@
 //  Created by Aayush Pokharel on 2022-03-23.
 //
 
-import SwiftUI
 import Cocoa
+import SwiftUI
 
 // MARK: - Circular Button Modifier
 
@@ -15,11 +15,12 @@ extension View {
         return modifier(CircularButtonModifier(color: color))
     }
 }
+
 // MARK: - Circular Image Modifier
 
 extension View {
-    func profileImage() -> ModifiedContent<Self, CircularSpinnyImageModifier> {
-        return modifier(CircularSpinnyImageModifier())
+    func profileImage() -> ModifiedContent<Self, SpinnyImageModifier> {
+        return modifier(SpinnyImageModifier())
     }
 }
 

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct VersionInfoView: View {
     @EnvironmentObject var updatesViewModel: VersionCheckViewModel
-    @Environment(\.openURL) var openURL
 
     var body: some View {
         VStack {
@@ -36,13 +35,13 @@ struct VersionInfoView_Previews: PreviewProvider {
 }
 
 // MARK: - Single Version info line
+
 struct VersionInfoLine: View {
     let title: String
     let icon: String
     let value: String?
 
     var body: some View {
-
         HStack {
             Label(title, systemImage: icon)
                 .symbolVariant(.circle)

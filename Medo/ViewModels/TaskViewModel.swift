@@ -12,12 +12,6 @@ import SwiftUI
 class TaskViewModel: ObservableObject {
     let persistenceController = PersistenceController.shared
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Task.priority, ascending: true)],
-        animation: .default
-    )
-    var tasks: FetchedResults<Task>
-
     //    Default Inititaion
     @Published var id = UUID()
     @Published var title = ""
@@ -33,24 +27,24 @@ class TaskViewModel: ObservableObject {
 
 //    For Fun Stats
 
-    @AppStorage(AppStorageStrings.usage_add) var usage_add = 0
-    @AppStorage(AppStorageStrings.usage_delete) var usage_delete = 0
-    @AppStorage(AppStorageStrings.usage_edit) var usage_edit = 0
+    @AppStorage(AppStorageStrings.addUsage) var addUsage = 0
+    @AppStorage(AppStorageStrings.deleteUsage) var deleteUsage = 0
+    @AppStorage(AppStorageStrings.editUsage) var editUsage = 0
 
     //    Functions called to write data to create new task item or update existing one.
     func writeData() {
-        if title.count == 0 {
+        if title.isEmpty {
             return
         }
         if updateItem != nil {
-            usage_edit += 1
+            editUsage += 1
 
             //            Updating old data
             updateItem.title = title
             updateItem.priority = priority
             updateItem.timestamp = timestamp
         } else {
-            usage_add += 1
+            addUsage += 1
 
             //            Creating new item
             let newTask = Task(context: persistenceController.container.viewContext)
@@ -81,16 +75,8 @@ class TaskViewModel: ObservableObject {
         }
     }
 
-    func editData(item: Task) {
-        print("editing \(item.title ?? "Untitled")")
-        updateItem = item
-        title = updateItem.title ?? "Untitled"
-        priority = updateItem.priority ?? Priority.low.rawValue
-        id = updateItem.id ?? UUID()
-    }
-
     func delete(item: Task) {
-        usage_delete += 1
+        deleteUsage += 1
         persistenceController.container.viewContext.delete(item)
 
         do {

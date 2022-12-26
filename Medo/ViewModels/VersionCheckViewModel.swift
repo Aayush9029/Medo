@@ -8,7 +8,7 @@
 import SwiftUI
 
 class VersionCheckViewModel: ObservableObject {
-    @Published var latestVersion: VersionModel = VersionModel.exampleVersionModel
+    @Published var latestVersion: VersionModel = .exampleVersionModel
 
     enum UpdateFetcherError: Error {
         case invalidURL

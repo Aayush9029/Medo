@@ -12,10 +12,8 @@ struct TaskModel {
     let priority: String
 }
 
-class URLParser {
-
+enum URLParser {
     static func parse(_ url: String) -> [UrlParseType: TaskModel?]? {
-
         guard let host = URLComponents(string: url)?.host else {
             return nil
         }
@@ -25,8 +23,10 @@ class URLParser {
 
             switch urlType {
             case .addTask:
-                guard let  query = URLComponents(string: url)?.queryItems else { return nil }
-                return [UrlParseType.addTask: URLParser.get_task(items: query)]
+                guard let query = URLComponents(string: url)?.queryItems else {
+                    return nil
+                }
+                return [UrlParseType.addTask: URLParser.getTask(items: query)]
             case .floatSmall:
                 return [UrlParseType.floatSmall: nil]
             case .floatMedium:
@@ -38,8 +38,8 @@ class URLParser {
         return nil
     }
 
-    static func get_task(items: [URLQueryItem]) -> TaskModel {
-        var title: String = "Untitled"
+    static func getTask(items: [URLQueryItem]) -> TaskModel {
+        var title = "Untitled"
         var priority: String = Priority.low.rawValue
 
         if let titleQuery = items.first {
@@ -49,12 +49,11 @@ class URLParser {
         }
         if let priorityQuery = items.last {
             if priorityQuery.name == "p" {
-                if let r_priority = Priority(rawValue: priorityQuery.value ?? "3") {
-                    priority = r_priority.rawValue
+                if let rPriority = Priority(rawValue: priorityQuery.value ?? "3") {
+                    priority = rPriority.rawValue
                 }
             }
         }
         return TaskModel(title: title, priority: priority)
     }
-
 }

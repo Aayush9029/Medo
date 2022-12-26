@@ -5,14 +5,13 @@
 //  Created by Aayush Pokharel on 2022-03-20.
 //
 
-import SwiftUI
 import LaunchAtLogin
+import SwiftUI
 
 struct PrefrencesGeneralView: View {
     @EnvironmentObject var updatesViewModel: VersionCheckViewModel
 
-    @AppStorage(AppStorageStrings.launch_at_login) var launch_at_login = true
-    @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
+    @AppStorage(AppStorageStrings.showTimestamp) var showTimestamp = true
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,7 +33,7 @@ struct PrefrencesGeneralView: View {
                         Label("Show time stamp", systemImage: "calendar")
                             .font(.title3)
                         Spacer()
-                        Toggle(isOn: $show_time_stamp) {}
+                        Toggle(isOn: $showTimestamp) {}
                     }
                 } header: {
                     Text("UI / UX")
@@ -42,12 +41,12 @@ struct PrefrencesGeneralView: View {
                 Section {
                     VersionInfoView()
                         .environmentObject(updatesViewModel)
-                }header: {
+                } header: {
                     Text("Updates")
                 }
             }
-                .toggleStyle(.switch)
-                .padding()
+            .toggleStyle(.switch)
+            .padding()
         }
         .task {
             await updatesViewModel.checkForUpdates()

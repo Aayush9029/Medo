@@ -14,5 +14,11 @@ struct VersionModel: Codable {
     let build: Int
     let downloadlink: String
 
-    static let exampleVersionModel = VersionModel(title: "New Release", published: "2022-03-23", version: "0.0", build: 0, downloadlink: "https://www.apple.com")
+    static let exampleVersionModel = VersionModel(
+        title: "New Release",
+        published: "2022-03-23",
+        version: "0.0",
+        build: 0,
+        downloadlink: "https://www.apple.com"
+    )
 }

@@ -5,10 +5,11 @@
 //  Created by Aayush Pokharel on 2022-03-19.
 //
 
-import SwiftUI
 import Cocoa
+import SwiftUI
 
 // MARK: - Better Blur Modifiers
+
 struct VisualEffectView: NSViewRepresentable {
     let material: NSVisualEffectView.Material
     let blendingMode: NSVisualEffectView.BlendingMode
@@ -28,6 +29,7 @@ struct VisualEffectView: NSViewRepresentable {
 }
 
 // MARK: - Floating view
+
 extension View {
     private func newWindowInternal(with title: String, isTransparent: Bool = false) -> NSWindow {
         let window = KeyWindow(
@@ -43,7 +45,7 @@ extension View {
         window.makeKeyAndOrderFront(self)
         window.level = .floating
         if isTransparent {
-            window.backgroundColor =  .clear
+            window.backgroundColor = .clear
             window.isOpaque = false
             window.styleMask = [.hudWindow, .closable]
             window.isMovableByWindowBackground = true

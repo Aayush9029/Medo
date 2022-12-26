@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleTaskView: View {
-    @AppStorage(AppStorageStrings.show_time_stamp) var show_time_stamp = true
+    @AppStorage(AppStorageStrings.showTimestamp) var showTimestamp = true
 
     let title: String
     let priority: Priority
@@ -24,10 +24,10 @@ struct SingleTaskView: View {
                         .foregroundStyle(.primary)
                 }
                 Group {
-                    if show_time_stamp {
-                    Text(timestamp, formatter: itemFormatter)
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
+                    if showTimestamp {
+                        Text(timestamp, formatter: itemFormatter)
+                            .font(.caption2)
+                            .foregroundStyle(.tertiary)
                     }
                 }
             }
@@ -51,12 +51,21 @@ struct SingleTaskView: View {
             .stroke(.linearGradient(.init(colors: [
                 .white.opacity(0.25),
                 .white.opacity(0.5),
-                priority == .low ? .blue.opacity(0.75) :   priority == .medium ? .orange.opacity(0.75) : .pink.opacity(0.75)
+                priorityColor().opacity(0.75)
             ]), startPoint: .top, endPoint: .bottom), lineWidth: 1.5)
-                .shadow(color:
-                            priority == .low ? .blue :   priority == .medium ? .orange : .pink, radius: 5, x: 0, y: 0)
-
+            .shadow(color: priorityColor(), radius: 5, x: 0, y: 0)
         )
+    }
+
+    func priorityColor() -> Color {
+        switch priority {
+        case .low:
+            return .blue
+        case .medium:
+            return .orange
+        case .high:
+            return .pink
+        }
     }
 }
 
@@ -89,10 +98,3 @@ struct SingleTaskView_Previews: PreviewProvider {
         .frame(width: 400)
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .full
-    formatter.timeStyle = .medium
-    return formatter
-}()

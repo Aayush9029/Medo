@@ -13,9 +13,6 @@
 		B20CC83627E66437007A96E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20CC83527E66437007A96E3 /* Preview Assets.xcassets */; };
 		B20CC83827E66437007A96E3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC83727E66437007A96E3 /* Persistence.swift */; };
 		B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20CC83927E66437007A96E3 /* Medo.xcdatamodeld */; };
-		B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC84327E66489007A96E3 /* MainHostingVC.swift */; };
-		B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC84B27E66503007A96E3 /* EventMonitor.swift */; };
-		B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC84C27E66503007A96E3 /* StatusBarController.swift */; };
 		B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85027E666B2007A96E3 /* TaskViewModel.swift */; };
 		B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85327E66859007A96E3 /* TaskEnums.swift */; };
 		B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */; };
@@ -34,11 +31,10 @@
 		B29F87BD27EBD09900AA7D16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87BC27EBD09900AA7D16 /* Constants.swift */; };
 		B29F87C027EBD3EC00AA7D16 /* CleanLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87BF27EBD3EC00AA7D16 /* CleanLinkView.swift */; };
 		B29F87C227EBD42400AA7D16 /* PrefrencesSingleLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87C127EBD42400AA7D16 /* PrefrencesSingleLineView.swift */; };
-		B29F87C427EBD47600AA7D16 /* CircularSpinnyImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87C327EBD47600AA7D16 /* CircularSpinnyImageModifier.swift */; };
+		B29F87C427EBD47600AA7D16 /* SpinnyImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87C327EBD47600AA7D16 /* SpinnyImageModifier.swift */; };
 		B29F87C627EBD50E00AA7D16 /* BoldTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87C527EBD50E00AA7D16 /* BoldTextModifier.swift */; };
 		B29F87C827EBD54F00AA7D16 /*  View+Modifiers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87C727EBD54F00AA7D16 /*  View+Modifiers+Extensions.swift */; };
 		B29F87CA27EBD57700AA7D16 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87C927EBD57700AA7D16 /* KeyWindow.swift */; };
-		B29F87CD27EBD6DA00AA7D16 /* SingleRowWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87CC27EBD6DA00AA7D16 /* SingleRowWelcomeView.swift */; };
 		B29F87D027EBD75C00AA7D16 /* VersionCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87CF27EBD75C00AA7D16 /* VersionCheckViewModel.swift */; };
 		B29F87D227EBD77B00AA7D16 /* VersionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87D127EBD77B00AA7D16 /* VersionModel.swift */; };
 		B29F87D427EBDCEE00AA7D16 /* VersionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29F87D327EBDCEE00AA7D16 /* VersionInfoView.swift */; };
@@ -46,11 +42,9 @@
 		B2CF9B2827E777FE00D9C494 /* URLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF9B2727E777FE00D9C494 /* URLParser.swift */; };
 		B2CF9B2A27E7997D00D9C494 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */; };
 		B2FBDBC327EA410400093263 /* UrlParseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBC227EA410400093263 /* UrlParseType.swift */; };
-		B2FBDBCB27EA4FDF00093263 /* WelcomeView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBCA27EA4FDF00093263 /* WelcomeView1.swift */; };
-		B2FBDBCD27EA51C400093263 /* WelcomeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBCC27EA51C400093263 /* WelcomeView2.swift */; };
-		B2FBDBCF27EA526C00093263 /* WelcomeView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBCE27EA526C00093263 /* WelcomeView3.swift */; };
-		B2FBDBD127EA540800093263 /* MainWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDBD027EA540800093263 /* MainWelcomeView.swift */; };
 		B2FBDBD427EA5D2500093263 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = B2FBDBD327EA5D2500093263 /* LaunchAtLogin */; };
+		C29613222959637600A465D1 /* MedoApp+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29613212959637600A465D1 /* MedoApp+Extensions.swift */; };
+		C29613242959668500A465D1 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29613232959668500A465D1 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,9 +56,6 @@
 		B20CC83727E66437007A96E3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B20CC83A27E66437007A96E3 /* Medo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Medo.xcdatamodel; sourceTree = "<group>"; };
 		B20CC83C27E66437007A96E3 /* Medo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Medo.entitlements; sourceTree = "<group>"; };
-		B20CC84327E66489007A96E3 /* MainHostingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHostingVC.swift; sourceTree = "<group>"; };
-		B20CC84B27E66503007A96E3 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		B20CC84C27E66503007A96E3 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		B20CC85027E666B2007A96E3 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		B20CC85327E66859007A96E3 /* TaskEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEnums.swift; sourceTree = "<group>"; };
 		B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskView.swift; sourceTree = "<group>"; };
@@ -83,11 +74,10 @@
 		B29F87BC27EBD09900AA7D16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B29F87BF27EBD3EC00AA7D16 /* CleanLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanLinkView.swift; sourceTree = "<group>"; };
 		B29F87C127EBD42400AA7D16 /* PrefrencesSingleLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefrencesSingleLineView.swift; sourceTree = "<group>"; };
-		B29F87C327EBD47600AA7D16 /* CircularSpinnyImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSpinnyImageModifier.swift; sourceTree = "<group>"; };
+		B29F87C327EBD47600AA7D16 /* SpinnyImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnyImageModifier.swift; sourceTree = "<group>"; };
 		B29F87C527EBD50E00AA7D16 /* BoldTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldTextModifier.swift; sourceTree = "<group>"; };
 		B29F87C727EBD54F00AA7D16 /*  View+Modifiers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " View+Modifiers+Extensions.swift"; sourceTree = "<group>"; };
 		B29F87C927EBD57700AA7D16 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
-		B29F87CC27EBD6DA00AA7D16 /* SingleRowWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRowWelcomeView.swift; sourceTree = "<group>"; };
 		B29F87CF27EBD75C00AA7D16 /* VersionCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionCheckViewModel.swift; sourceTree = "<group>"; };
 		B29F87D127EBD77B00AA7D16 /* VersionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionModel.swift; sourceTree = "<group>"; };
 		B29F87D327EBDCEE00AA7D16 /* VersionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInfoView.swift; sourceTree = "<group>"; };
@@ -96,10 +86,8 @@
 		B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		B2E50DEA27E775FC001E19D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B2FBDBC227EA410400093263 /* UrlParseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlParseType.swift; sourceTree = "<group>"; };
-		B2FBDBCA27EA4FDF00093263 /* WelcomeView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView1.swift; sourceTree = "<group>"; };
-		B2FBDBCC27EA51C400093263 /* WelcomeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView2.swift; sourceTree = "<group>"; };
-		B2FBDBCE27EA526C00093263 /* WelcomeView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView3.swift; sourceTree = "<group>"; };
-		B2FBDBD027EA540800093263 /* MainWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWelcomeView.swift; sourceTree = "<group>"; };
+		C29613212959637600A465D1 /* MedoApp+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedoApp+Extensions.swift"; sourceTree = "<group>"; };
+		C29613232959668500A465D1 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +128,6 @@
 				B20CC84627E664C6007A96E3 /* ViewModels */,
 				B20CC85227E6684C007A96E3 /* Models */,
 				B255313027E6900100E813A1 /* ViewModifiers */,
-				B20CC84227E6647A007A96E3 /* ViewController */,
 				B20CC84827E664DF007A96E3 /* Extensions */,
 				B20CC84927E664E5007A96E3 /* Helpers */,
 				B20CC83427E66437007A96E3 /* Preview Content */,
@@ -158,19 +145,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B20CC84227E6647A007A96E3 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B20CC84327E66489007A96E3 /* MainHostingVC.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		B20CC84527E664C1007A96E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B20CC83027E66434007A96E3 /* ContentView.swift */,
-				B2FBDBC927EA4FD400093263 /* SplashScreen */,
 				B255313E27E6DA1B00E813A1 /* PrefrencesView */,
 				B29F87CE27EBD74000AA7D16 /* TasksListView */,
 			);
@@ -193,6 +171,7 @@
 				B2CF9B2927E7997D00D9C494 /* URL+Extensions.swift */,
 				B29F87C727EBD54F00AA7D16 /*  View+Modifiers+Extensions.swift */,
 				B29F87D527EBDD5B00AA7D16 /* Bundle+Extensions.swift */,
+				C29613212959637600A465D1 /* MedoApp+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,9 +181,8 @@
 			children = (
 				B2CF9B2727E777FE00D9C494 /* URLParser.swift */,
 				B20CC83727E66437007A96E3 /* Persistence.swift */,
-				B20CC84B27E66503007A96E3 /* EventMonitor.swift */,
-				B20CC84C27E66503007A96E3 /* StatusBarController.swift */,
 				B29F87C927EBD57700AA7D16 /* KeyWindow.swift */,
+				C29613232959668500A465D1 /* DateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -225,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				B255313127E6901800E813A1 /* CircularButtonModifier.swift */,
-				B29F87C327EBD47600AA7D16 /* CircularSpinnyImageModifier.swift */,
+				B29F87C327EBD47600AA7D16 /* SpinnyImageModifier.swift */,
 				B29F87C527EBD50E00AA7D16 /* BoldTextModifier.swift */,
 			);
 			path = ViewModifiers;
@@ -236,7 +214,6 @@
 			children = (
 				B20CC85527E66BDF007A96E3 /* SingleTaskView.swift */,
 				B255313927E6B00200E813A1 /* TaskContextMenu.swift */,
-				B255313C27E6B2C400E813A1 /* BottomBarView.swift */,
 				B255313527E6924300E813A1 /* EmptyTaskView.swift */,
 			);
 			path = SubViews;
@@ -265,33 +242,14 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
-		B29F87CB27EBD6D200AA7D16 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				B29F87CC27EBD6DA00AA7D16 /* SingleRowWelcomeView.swift */,
-			);
-			path = SubViews;
-			sourceTree = "<group>";
-		};
 		B29F87CE27EBD74000AA7D16 /* TasksListView */ = {
 			isa = PBXGroup;
 			children = (
-				B255313B27E6B27200E813A1 /* SubViews */,
 				B255313727E6AEB600E813A1 /* TasksListView.swift */,
+				B255313C27E6B2C400E813A1 /* BottomBarView.swift */,
+				B255313B27E6B27200E813A1 /* SubViews */,
 			);
 			path = TasksListView;
-			sourceTree = "<group>";
-		};
-		B2FBDBC927EA4FD400093263 /* SplashScreen */ = {
-			isa = PBXGroup;
-			children = (
-				B29F87CB27EBD6D200AA7D16 /* SubViews */,
-				B2FBDBD027EA540800093263 /* MainWelcomeView.swift */,
-				B2FBDBCA27EA4FDF00093263 /* WelcomeView1.swift */,
-				B2FBDBCC27EA51C400093263 /* WelcomeView2.swift */,
-				B2FBDBCE27EA526C00093263 /* WelcomeView3.swift */,
-			);
-			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,7 +284,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					B20CC82A27E66434007A96E3 = {
 						CreatedOnToolsVersion = 13.3;
@@ -394,8 +352,6 @@
 				B255313627E6924300E813A1 /* EmptyTaskView.swift in Sources */,
 				B20CC83827E66437007A96E3 /* Persistence.swift in Sources */,
 				B2FBDBC327EA410400093263 /* UrlParseType.swift in Sources */,
-				B20CC84F27E66509007A96E3 /* StatusBarController.swift in Sources */,
-				B29F87CD27EBD6DA00AA7D16 /* SingleRowWelcomeView.swift in Sources */,
 				B2CF9B2827E777FE00D9C494 /* URLParser.swift in Sources */,
 				B29F87BD27EBD09900AA7D16 /* Constants.swift in Sources */,
 				B29F87C027EBD3EC00AA7D16 /* CleanLinkView.swift in Sources */,
@@ -403,34 +359,30 @@
 				B255314227E6DB2000E813A1 /* AppStorageStrings.swift in Sources */,
 				B29F87D627EBDD5B00AA7D16 /* Bundle+Extensions.swift in Sources */,
 				B29F87D027EBD75C00AA7D16 /* VersionCheckViewModel.swift in Sources */,
-				B2FBDBCB27EA4FDF00093263 /* WelcomeView1.swift in Sources */,
 				B20CC83127E66434007A96E3 /* ContentView.swift in Sources */,
 				B29F87C227EBD42400AA7D16 /* PrefrencesSingleLineView.swift in Sources */,
+				C29613222959637600A465D1 /* MedoApp+Extensions.swift in Sources */,
 				B20CC85627E66BDF007A96E3 /* SingleTaskView.swift in Sources */,
-				B20CC84427E66489007A96E3 /* MainHostingVC.swift in Sources */,
 				B27A85B927E6F30100E3C48D /* PrefrencesGeneralView.swift in Sources */,
 				B29F87C827EBD54F00AA7D16 /*  View+Modifiers+Extensions.swift in Sources */,
 				B255314427E6DBC600E813A1 /* PrefrencesUsageView.swift in Sources */,
-				B2FBDBCD27EA51C400093263 /* WelcomeView2.swift in Sources */,
 				B255313227E6901800E813A1 /* CircularButtonModifier.swift in Sources */,
 				B29F87CA27EBD57700AA7D16 /* KeyWindow.swift in Sources */,
-				B2FBDBCF27EA526C00093263 /* WelcomeView3.swift in Sources */,
 				B29F87C627EBD50E00AA7D16 /* BoldTextModifier.swift in Sources */,
 				B255313827E6AEB600E813A1 /* TasksListView.swift in Sources */,
 				B2CF9B2A27E7997D00D9C494 /* URL+Extensions.swift in Sources */,
 				B255314027E6DA4000E813A1 /* PrefrencesView.swift in Sources */,
 				B255313A27E6B00200E813A1 /* TaskContextMenu.swift in Sources */,
-				B20CC84E27E66509007A96E3 /* EventMonitor.swift in Sources */,
+				C29613242959668500A465D1 /* DateFormatter.swift in Sources */,
 				B29F87D227EBD77B00AA7D16 /* VersionModel.swift in Sources */,
 				B20CC85127E666B2007A96E3 /* TaskViewModel.swift in Sources */,
 				B20CC83B27E66437007A96E3 /* Medo.xcdatamodeld in Sources */,
 				B20CC82F27E66434007A96E3 /* MedoApp.swift in Sources */,
 				B255314827E6E89F00E813A1 /* PrefrencesPowerUserView.swift in Sources */,
-				B2FBDBD127EA540800093263 /* MainWelcomeView.swift in Sources */,
 				B255313427E690DA00E813A1 /* View+Extensions.swift in Sources */,
 				B20CC85427E66859007A96E3 /* TaskEnums.swift in Sources */,
 				B29F87D427EBDCEE00AA7D16 /* VersionInfoView.swift in Sources */,
-				B29F87C427EBD47600AA7D16 /* CircularSpinnyImageModifier.swift in Sources */,
+				B29F87C427EBD47600AA7D16 /* SpinnyImageModifier.swift in Sources */,
 				B255314627E6E08600E813A1 /* PrefrencesAboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +423,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -531,6 +484,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -557,11 +511,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Medo/Medo.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Medo/Preview Content\"";
-				DEVELOPMENT_TEAM = 4538W4A79B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -572,7 +528,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aayush.opensource.Medo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -586,11 +543,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Medo/Medo.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Medo/Preview Content\"";
-				DEVELOPMENT_TEAM = 4538W4A79B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -601,7 +560,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aayush.opensource.Medo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
