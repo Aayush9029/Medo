@@ -7,10 +7,13 @@
 
 import CoreData
 import Foundation
+import OSLog
 import SwiftUI
 
-class TaskViewModel: ObservableObject {
+@MainActor
+final class TaskViewModel: ObservableObject {
     let persistenceController = PersistenceController.shared
+    private let logger = Logger(subsystem: "com.aayush.opensource.Medo", category: "TaskViewModel")
 
     //    Default Inititaion
     @Published var id = UUID()
@@ -23,7 +26,7 @@ class TaskViewModel: ObservableObject {
     @Published var confrimDelete: Bool = false
 
     //    Storing the updated item
-    @Published var updateItem: Task!
+    @Published var updateItem: Task?
 
 //    For Fun Stats
 
@@ -36,7 +39,7 @@ class TaskViewModel: ObservableObject {
         if title.isEmpty {
             return
         }
-        if updateItem != nil {
+        if let updateItem {
             editUsage += 1
 
             //            Updating old data
@@ -61,7 +64,7 @@ class TaskViewModel: ObservableObject {
             resetValues()
 
         } catch {
-            print("Could not add / update the task:", error.localizedDescription)
+            logger.error("Could not add or update the task: \(error.localizedDescription, privacy: .public)")
         }
     }
 
@@ -71,7 +74,7 @@ class TaskViewModel: ObservableObject {
             try persistenceController.container.viewContext.save()
 
         } catch {
-            print("Could not update the  priority:", error.localizedDescription)
+            logger.error("Could not update the priority: \(error.localizedDescription, privacy: .public)")
         }
     }
 
@@ -82,7 +85,7 @@ class TaskViewModel: ObservableObject {
         do {
             try persistenceController.container.viewContext.save()
         } catch {
-            print("Could not delete the task:", error.localizedDescription)
+            logger.error("Could not delete the task: \(error.localizedDescription, privacy: .public)")
         }
         id = UUID()
     }

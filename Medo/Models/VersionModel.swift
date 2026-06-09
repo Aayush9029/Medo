@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VersionModel: Codable {
+struct VersionModel: Codable, Sendable {
     let title: String
     let published: String
     let version: String

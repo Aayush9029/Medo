@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OSLog
 
 struct TaskModel {
     let title: String
@@ -13,17 +14,20 @@ struct TaskModel {
 }
 
 enum URLParser {
+    private static let logger = Logger(subsystem: "com.aayush.opensource.Medo", category: "URLParser")
+
     static func parse(_ url: String) -> [UrlParseType: TaskModel?]? {
-        guard let host = URLComponents(string: url)?.host else {
+        guard let components = URLComponents(string: url), let host = components.host else {
             return nil
         }
-        print("Host: \(host)")
+        logger.debug("Parsing deeplink host: \(host, privacy: .public)")
+
         if let urlType = UrlParseType(rawValue: host) {
-            print("UrlParseType: \(urlType)")
+            logger.debug("Matched deeplink type: \(urlType.rawValue, privacy: .public)")
 
             switch urlType {
             case .addTask:
-                guard let query = URLComponents(string: url)?.queryItems else {
+                guard let query = components.queryItems else {
                     return nil
                 }
                 return [UrlParseType.addTask: URLParser.getTask(items: query)]
